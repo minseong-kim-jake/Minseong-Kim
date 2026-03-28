@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "motion/react";
 
 export default function Introduce() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showMobile, setShowMobile] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
 
   const coreValues = [
     { title: "DETAIL", desc: "단독으로도 놓치지 않는 디테일" },
@@ -22,7 +24,7 @@ export default function Introduce() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-y-32">
           {/* Title */}
           <div className="md:col-span-12">
-            <h1 className="text-[18vw] md:text-[12vw] font-bold leading-[0.95] tracking-tighter uppercase">
+            <h1 className="text-[18vw] md:text-[12vw] font-bold leading-[0.95] tracking-tighter uppercase text-black">
               큰 그릇<br />대기민성
             </h1>
           </div>
@@ -34,8 +36,8 @@ export default function Introduce() {
               <p>무엇이든 담는 단단함</p>
             </div>
           </div>
-          <div className="md:col-span-7 self-start">
-            <p className="text-xl md:text-3xl font-medium leading-tight md:max-w-xl ml-auto">
+          <div className="md:col-span-7 self-start flex justify-end">
+            <p className="text-xl md:text-3xl font-medium leading-tight text-right">
               안녕하세요. 브랜드를 섬세하게 이해하고<br />
               그에 맞는 방식으로 적용하고 확장하는<br />
               <span className="font-sans">IMC</span> 마케터 김민성입니다.
@@ -61,63 +63,119 @@ export default function Introduce() {
       {/* Profile Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-48">
         <div className="aspect-[3/4] bg-neutral-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-          <img
-            src="/profile.png"
-            alt="Profile"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
+          <img 
+            src="https://i.imgur.com/8n9XW8F.jpeg" 
+            alt="Profile" 
+            className="w-full h-full object-cover" 
+            referrerPolicy="no-referrer" 
+            crossOrigin="anonymous" 
           />
         </div>
         
         <div className="space-y-12">
           <div>
-            <h2 className="text-5xl font-bold mb-12">김민성 Kim Min-seong</h2>
+            <h2 className="text-5xl font-bold mb-12 flex items-baseline gap-4 flex-wrap">
+              김민성 <span className="text-3xl font-medium text-neutral-500">Kim Min-seong</span>
+            </h2>
             <div className="mt-12 space-y-2 text-lg text-neutral-600">
-              <p>1998.06.03 (만 27세)</p>
-              <p>cubeast@naver.com</p>
-              <p>010-5872-8933</p>
-              <p className="serif italic">Instagram</p>
+              <p className="font-medium text-neutral-700">1998.06.03</p>
+              
+              <div className="flex flex-col space-y-0.5">
+                <div className="flex gap-3 items-center">
+                  <button 
+                    onClick={() => setShowMobile(!showMobile)}
+                    className={`px-3 py-1 text-sm rounded-md border transition-all duration-300 ${
+                      showMobile 
+                      ? 'bg-neutral-200 border-neutral-400 text-neutral-900 font-medium' 
+                      : 'text-neutral-500 border-neutral-200 hover:border-neutral-300 hover:text-neutral-600'
+                    }`}
+                  >
+                    Mobile
+                  </button>
+                  <button 
+                    onClick={() => setShowEmail(!showEmail)}
+                    className={`px-3 py-1 text-sm rounded-md border transition-all duration-300 ${
+                      showEmail 
+                      ? 'bg-neutral-200 border-neutral-400 text-neutral-900 font-medium' 
+                      : 'text-neutral-500 border-neutral-200 hover:border-neutral-300 hover:text-neutral-600'
+                    }`}
+                  >
+                    E-mail
+                  </button>
+                  <a 
+                    href="https://instagram.com/bravery___" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 text-sm rounded-md border border-neutral-200 text-neutral-500 hover:border-neutral-300 hover:text-neutral-600 transition-all duration-300"
+                  >
+                    Instagram
+                  </a>
+                </div>
+
+                <AnimatePresence>
+                  {showMobile && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-neutral-900 font-bold py-1">010-5872-8933</p>
+                    </motion.div>
+                  )}
+                  {showEmail && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-neutral-900 font-bold py-1">cubeast@naver.com</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </div>
 
           <div className="space-y-8">
             <div>
               <h4 className="serif text-xl font-bold mb-4 border-b border-neutral-200 pb-2">CAREER</h4>
-              <div className="space-y-6">
+              <div className="space-y-3">
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <p className="font-bold">RMTC - Romantic Crown Marketing</p>
+                    <p className="font-bold leading-tight">RMTC - Romantic Crown Marketing</p>
                     <p className="text-[11px] text-neutral-500">22.03 - 25.11</p>
                   </div>
-                  <p className="text-neutral-700">스트릿/캐주얼 패션 브랜드 IMC 마케팅</p>
+                  <p className="text-neutral-700 leading-tight text-base">스트릿/캐주얼 패션 브랜드 IMC 마케팅</p>
                 </div>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <p className="font-bold">ROUND MEDIA Social Contents</p>
+                    <p className="font-bold leading-tight">ROUND MEDIA Social Contents</p>
                     <p className="text-[11px] text-neutral-500">20.01 - 21.01</p>
                   </div>
-                  <p className="text-neutral-700">뷰티패션 매거진 에디터 / 광고 대행 운영 기획</p>
+                  <p className="text-neutral-700 leading-tight text-base">뷰티패션 매거진 에디터 / 광고 대행 운영 기획</p>
                 </div>
               </div>
             </div>
 
             <div>
               <h4 className="serif text-xl font-bold mb-4 border-b border-neutral-200 pb-2">EDUCATION</h4>
-              <ul className="space-y-2 text-neutral-700">
+              <ul className="space-y-1 text-neutral-700">
                 <li className="flex items-baseline gap-2">
-                  <span>단국대학교 경영학전공</span>
+                  <span className="leading-tight">단국대학교 경영학전공</span>
                   <span className="text-[11px] text-neutral-500">17.01 - 22.08</span>
                 </li>
                 <li className="flex items-baseline gap-2">
-                  <span>단국대학교 광고홍보전공</span>
+                  <span className="leading-tight">단국대학교 광고홍보전공</span>
                   <span className="text-[11px] text-neutral-500">18.01 - 22.08</span>
                 </li>
                 <li className="flex items-baseline gap-2">
-                  <span>홍보대사 날개단대 기획팀</span>
+                  <span className="leading-tight">홍보대사 날개단대 기획팀</span>
                   <span className="text-[11px] text-neutral-500">19.01 - 20.01</span>
                 </li>
                 <li className="flex items-baseline gap-2">
-                  <span>동아리 광고친구 회장</span>
+                  <span className="leading-tight">동아리 광고친구 회장</span>
                   <span className="text-[11px] text-neutral-500">18.01 - 19.01</span>
                 </li>
               </ul>

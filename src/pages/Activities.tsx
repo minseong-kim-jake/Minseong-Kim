@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 interface AccordionItemProps {
   title: string;
+  category: string;
   period: string;
   children: React.ReactNode;
   isOpen: boolean;
@@ -10,20 +11,22 @@ interface AccordionItemProps {
   key?: React.Key;
 }
 
-function AccordionItem({ title, period, children, isOpen, onClick }: AccordionItemProps) {
+function AccordionItem({ title, category, period, children, isOpen, onClick }: AccordionItemProps) {
   return (
-    <div className="border-b border-neutral-200 py-8 last:border-0">
+    <div className={`border-b border-neutral-200 transition-colors duration-300 ${isOpen ? 'bg-neutral-50' : 'hover:bg-neutral-50/50'}`}>
       <button
         onClick={onClick}
-        className="w-full flex justify-between items-center group text-left"
+        className="w-full flex justify-between items-center group text-left py-8 px-4 md:px-6"
       >
-        <div className="flex flex-col md:flex-row md:items-baseline md:space-x-4">
+        <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
           <h3 className={`text-2xl md:text-3xl font-bold transition-colors duration-300 ${isOpen ? 'text-black' : 'text-neutral-400 group-hover:text-black'}`}>
             {title}
           </h3>
-          <span className="serif italic text-sm text-neutral-400 mt-1 md:mt-0">{period}</span>
+          <span className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full border transition-colors duration-300 mt-2 md:mt-0 ${isOpen ? 'border-neutral-800 text-neutral-800' : 'border-neutral-300 text-neutral-400 group-hover:border-neutral-500 group-hover:text-neutral-500'}`}>
+            {category}
+          </span>
         </div>
-        <span className={`text-3xl transform transition-transform duration-300 ${isOpen ? 'rotate-45' : 'rotate-0'}`}>
+        <span className={`text-3xl transform transition-transform duration-300 ${isOpen ? 'rotate-45 text-black' : 'rotate-0 text-neutral-300 group-hover:text-black'}`}>
           +
         </span>
       </button>
@@ -36,7 +39,8 @@ function AccordionItem({ title, period, children, isOpen, onClick }: AccordionIt
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-10 pb-4">
+            <div className="pt-4 pb-10 px-4 md:px-6">
+              <p className="serif text-neutral-500 text-lg mb-6">{period}</p>
               {children}
             </div>
           </motion.div>
@@ -58,7 +62,7 @@ export default function Activities() {
 
   const activities = [
     {
-      category: "BEAUTY",
+      category: "Beauty",
       items: [
         {
           id: "loccitane",
@@ -104,7 +108,7 @@ export default function Activities() {
       ]
     },
     {
-      category: "IN-SCHOOL",
+      category: "In-school",
       items: [
         {
           id: "dankook_wing",
@@ -131,41 +135,42 @@ export default function Activities() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="page-transition px-8 md:px-24 py-24 md:py-32 max-w-7xl mx-auto"
+      className="page-transition"
     >
-      <header className="mb-24">
-        <h1 className="serif text-6xl md:text-8xl font-bold mb-4">ACTIVITIES</h1>
-        <p className="text-neutral-500 text-lg">Diverse Projects & Achievements</p>
+      <header className="bg-black text-white pt-32 pb-24 px-8 md:px-24 mb-24">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="serif text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">ACTIVITIES</h1>
+          <p className="text-neutral-400 text-lg">Diverse Projects & Achievements</p>
+        </div>
       </header>
 
-      <div className="space-y-32">
+      <div className="px-8 md:px-24 max-w-7xl mx-auto pb-32">
+        <div className="flex flex-col">
         {activities.map((section) => (
-          <section key={section.category}>
-            <h2 className="serif text-4xl md:text-5xl mb-12 border-b border-neutral-200 pb-4">
-              {section.category}
-            </h2>
+          <React.Fragment key={section.category}>
             <div className="flex flex-col">
               {section.items.map((item) => (
                 <AccordionItem
                   key={item.id}
                   title={item.title}
+                  category={section.category}
                   period={item.period}
                   isOpen={!!openItems[item.id]}
                   onClick={() => toggleItem(item.id)}
                 >
-                  <div className="space-y-8 max-w-4xl">
+                  <div className="space-y-6 max-w-4xl">
                     <div>
                       {item.award && (
-                        <span className="inline-block bg-neutral-900 text-white px-4 py-1.5 text-sm font-bold mb-6">
+                        <span className="inline-block bg-neutral-900 text-white px-3 py-1 text-xs font-bold mb-4">
                           {item.award}
                         </span>
                       )}
-                      <p className="text-2xl md:text-3xl font-medium text-neutral-800 leading-snug">
+                      <p className="text-xl md:text-2xl font-medium text-neutral-800 leading-snug">
                         “{item.content}”
                       </p>
                     </div>
-                    <div className="space-y-4">
-                      <p className="text-xl text-neutral-600 leading-relaxed">
+                    <div className="space-y-2">
+                      <p className="text-lg text-neutral-600 leading-normal">
                         {item.desc}
                       </p>
                       <p className="text-sm text-neutral-400 font-medium">
@@ -176,8 +181,9 @@ export default function Activities() {
                 </AccordionItem>
               ))}
             </div>
-          </section>
+          </React.Fragment>
         ))}
+        </div>
       </div>
     </motion.div>
   );

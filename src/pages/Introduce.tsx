@@ -17,10 +17,10 @@ export default function Introduce() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="page-transition px-8 md:px-24 py-24 md:py-32 max-w-7xl mx-auto"
+      className="page-transition px-8 md:px-24 py-12 md:py-32 max-w-7xl mx-auto"
     >
       {/* Hero Section */}
-      <section className="mb-48">
+      <section className="mb-24 md:mb-48">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-y-32">
           {/* Title */}
           <div className="md:col-span-12">
@@ -37,7 +37,7 @@ export default function Introduce() {
             </div>
           </div>
           <div className="md:col-span-7 self-start flex justify-end">
-            <p className="text-xl md:text-3xl font-medium leading-tight text-right">
+            <p className="text-lg md:text-2xl font-medium leading-tight text-right">
               안녕하세요. 브랜드를 섬세하게 이해하고<br />
               그에 맞는 방식으로 적용하고 확장하는<br />
               <span className="font-sans">IMC</span> 마케터 김민성입니다.
@@ -47,7 +47,7 @@ export default function Introduce() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-black text-white py-24 px-8 md:px-24 -mx-8 md:-mx-24 mb-48">
+      <section className="bg-black text-white py-12 md:py-24 px-8 md:px-24 -mx-8 md:-mx-24 mb-24 md:mb-48">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {coreValues.map((item) => (
             <div key={item.title} className="group">
@@ -61,7 +61,7 @@ export default function Introduce() {
       </section>
 
       {/* Profile Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-48">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-24 md:mb-48">
         <div className="aspect-[3/4] bg-neutral-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
           <img 
             src="https://i.imgur.com/8n9XW8F.jpeg" 
@@ -72,12 +72,12 @@ export default function Introduce() {
           />
         </div>
         
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           <div>
-            <h2 className="text-5xl font-bold mb-12 flex items-baseline gap-4 flex-wrap">
+            <h2 className="text-5xl font-bold mb-8 md:mb-12 flex items-baseline gap-4 flex-wrap">
               김민성 <span className="text-3xl font-medium text-neutral-500">Kim Min-seong</span>
             </h2>
-            <div className="mt-12 space-y-2 text-lg text-neutral-600">
+            <div className="mt-8 md:mt-12 space-y-2 text-lg text-neutral-600">
               <p className="font-medium text-neutral-700">1998.06.03</p>
               
               <div className="flex flex-col space-y-0.5">
@@ -138,7 +138,7 @@ export default function Introduce() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
               <h4 className="serif text-xl font-bold mb-4 border-b border-neutral-200 pb-2">CAREER</h4>
               <div className="space-y-3">

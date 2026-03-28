@@ -137,14 +137,14 @@ export default function Activities() {
       exit={{ opacity: 0 }}
       className="page-transition"
     >
-      <header className="bg-black text-white pt-32 pb-24 px-8 md:px-24 mb-24">
+      <header className="bg-black text-white pt-24 md:pt-32 pb-12 md:pb-24 px-8 md:px-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto">
           <h1 className="serif text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">ACTIVITIES</h1>
           <p className="text-neutral-400 text-lg">Diverse Projects & Achievements</p>
         </div>
       </header>
 
-      <div className="px-8 md:px-24 max-w-7xl mx-auto pb-32">
+      <div className="px-8 md:px-24 max-w-7xl mx-auto pb-16 md:pb-32">
         <div className="flex flex-col">
         {activities.map((section) => (
           <React.Fragment key={section.category}>

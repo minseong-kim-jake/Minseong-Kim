@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
+import { Plus } from "lucide-react";
 
 export default function Introduce() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -17,14 +19,14 @@ export default function Introduce() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="page-transition px-8 md:px-24 py-12 md:py-32 max-w-7xl mx-auto"
+      className="page-transition px-8 md:px-24 pt-24 pb-12 md:py-32 max-w-7xl mx-auto"
     >
       {/* Hero Section */}
-      <section className="mb-24 md:mb-48">
+      <section className="mb-12 md:mb-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-y-32">
           {/* Title */}
           <div className="md:col-span-12">
-            <h1 className="text-[18vw] md:text-[12vw] font-bold leading-[0.95] tracking-tighter uppercase text-black">
+            <h1 className="text-[16vw] md:text-[10vw] font-bold leading-[0.95] tracking-tighter uppercase text-black">
               큰 그릇<br />대기민성
             </h1>
           </div>
@@ -47,7 +49,7 @@ export default function Introduce() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-black text-white py-12 md:py-24 px-8 md:px-24 -mx-8 md:-mx-24 mb-24 md:mb-48">
+      <section className="bg-black text-white py-12 md:py-24 px-8 md:px-24 -mx-8 md:-mx-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {coreValues.map((item) => (
             <div key={item.title} className="group">
@@ -61,8 +63,8 @@ export default function Introduce() {
       </section>
 
       {/* Profile Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-24 md:mb-48">
-        <div className="aspect-[3/4] bg-neutral-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-12 md:mb-24">
+        <div className="aspect-[3/4] bg-neutral-100 overflow-hidden w-full max-w-[480px]">
           <img 
             src="https://i.imgur.com/8n9XW8F.jpeg" 
             alt="Profile" 
@@ -78,8 +80,6 @@ export default function Introduce() {
               김민성 <span className="text-3xl font-medium text-neutral-500">Kim Min-seong</span>
             </h2>
             <div className="mt-8 md:mt-12 space-y-2 text-lg text-neutral-600">
-              <p className="font-medium text-neutral-700">1998.06.03</p>
-              
               <div className="flex flex-col space-y-0.5">
                 <div className="flex gap-3 items-center">
                   <button 
@@ -140,21 +140,26 @@ export default function Introduce() {
 
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h4 className="serif text-xl font-bold mb-4 border-b border-neutral-200 pb-2">CAREER</h4>
+              <h4 className="serif text-xl font-bold mb-4 border-b border-neutral-200 pb-2 flex justify-between items-center">
+                CAREER
+                <Link to="/career" className="text-neutral-400 hover:text-black transition-colors">
+                  <Plus size={20} />
+                </Link>
+              </h4>
               <div className="space-y-3">
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <p className="font-bold leading-tight">RMTC - Romantic Crown Marketing</p>
+                    <p className="font-bold leading-tight">알엠티씨 로맨틱크라운 마케팅</p>
                     <p className="text-[11px] text-neutral-500">22.03 - 25.11</p>
                   </div>
-                  <p className="text-neutral-700 leading-tight text-base">스트릿/캐주얼 패션 브랜드 IMC 마케팅</p>
+                  <p className="text-neutral-700 leading-tight text-base">패션 브랜드 IMC 마케팅 단독 운영</p>
                 </div>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <p className="font-bold leading-tight">ROUND MEDIA Social Contents</p>
+                    <p className="font-bold leading-tight">라운드미디어 소셜콘텐츠팀</p>
                     <p className="text-[11px] text-neutral-500">20.01 - 21.01</p>
                   </div>
-                  <p className="text-neutral-700 leading-tight text-base">뷰티패션 매거진 에디터 / 광고 대행 운영 기획</p>
+                  <p className="text-neutral-700 leading-tight text-base">뷰티패션 매거진 에디터 / 광고주 채널 운영 기획</p>
                 </div>
               </div>
             </div>
@@ -167,7 +172,7 @@ export default function Introduce() {
                   <span className="text-[11px] text-neutral-500">17.01 - 22.08</span>
                 </li>
                 <li className="flex items-baseline gap-2">
-                  <span className="leading-tight">단국대학교 광고홍보전공</span>
+                  <span className="leading-tight">단국대학교 광고홍보부전공</span>
                   <span className="text-[11px] text-neutral-500">18.01 - 22.08</span>
                 </li>
                 <li className="flex items-baseline gap-2">

@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Instagram, Youtube, ExternalLink } from 'lucide-react';
+
+const roasData = [
+  { date: "2024.05", roas: 422 },
+  { date: "2024.07", roas: 462 },
+  { date: "2024.09", roas: 662 },
+  { date: "2024.11", roas: 1123 },
+  { date: "2025.01", roas: 962 },
+  { date: "2025.02", roas: 821 },
+];
 
 interface AccordionItemProps {
   title: string;
@@ -15,12 +26,16 @@ function AccordionItem({ title, children, isOpen, onClick }: AccordionItemProps)
         onClick={onClick}
         className="w-full flex justify-between items-center group text-left py-5 px-4 md:px-6"
       >
-        <h4 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? 'text-black' : 'text-neutral-400 group-hover:text-black'}`}>
-          {title}
-        </h4>
-        <span className={`text-3xl transform transition-transform duration-300 ${isOpen ? 'rotate-45 text-black' : 'rotate-0 text-neutral-300 group-hover:text-black'}`}>
-          +
-        </span>
+        <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
+          <h4 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? 'text-black' : 'text-neutral-400 group-hover:text-black'}`}>
+            {title}
+          </h4>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className={`text-3xl transform transition-transform duration-300 ${isOpen ? 'rotate-45 text-black' : 'rotate-0 text-neutral-300 group-hover:text-black'}`}>
+            +
+          </span>
+        </div>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -70,8 +85,8 @@ export default function Career() {
         <section className="mb-16 md:mb-32">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">RMTC - Romantic Crown Marketing</h2>
-            <p className="text-lg text-neutral-600">브랜드 마케팅 총괄 운영</p>
+            <h2 className="text-2xl md:text-4xl font-bold mb-2">알엠티씨 로맨틱크라운 마케팅</h2>
+            <p className="text-base md:text-lg text-neutral-600">패션 브랜드 IMC 마케팅 단독 운영</p>
           </div>
           <p className="serif text-xl font-medium text-neutral-600 mt-4 md:mt-0">2022.03 - 2025.11</p>
         </div>
@@ -79,7 +94,7 @@ export default function Career() {
         <div className="space-y-16">
           {/* Owned Media */}
           <div>
-            <h3 className="font-sans text-xl tracking-widest font-bold mb-4 flex items-center text-neutral-800">
+            <h3 className="font-sans text-lg md:text-xl tracking-normal md:tracking-widest font-bold mb-4 flex items-center text-neutral-800">
               OWNED MEDIA & CONTENTS
             </h3>
             <div className="flex flex-col">
@@ -89,14 +104,14 @@ export default function Career() {
                 onClick={() => toggleItem('sns')}
               >
                 <div className="space-y-6">
-                  <p className="text-base text-neutral-600 leading-relaxed max-w-3xl">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
                     브랜드/시즌 컨셉을 반영한 콘텐츠를 기획하여 SNS 채널을 운영하였습니다.<br />
                     인스타그램 채널 특성에 적합한 러프한 스타일로 촬영하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2">
                         <li>SNS 채널 운영 관리</li>
                         <li>SNS 이벤트 기획 및 실행</li>
                         <li>이미지/영상 콘텐츠 기획, 촬영, 편집</li>
@@ -104,24 +119,23 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">콘텐츠 예시</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-6">
+                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2 mb-6">
                         <li>룩북과 디테일컷 외적으로 제품과 무드를 가볍게 풀 수 있는 콘텐츠</li>
                         <li>프레피 → 스트릿 스타일로 변화한 과정에 적합한 브랜딩 요소</li>
                       </ul>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                      <div className="grid grid-cols-2 gap-1.5 mt-8">
                         {[
-                          "https://storage.googleapis.com/static.aihub.com/as-a-service/316741158833/2yawhsgcpwj4q73mrdc7cd/0195da2a-9f5e-76f5-9386-3507119f443a.png",
-                          "https://storage.googleapis.com/static.aihub.com/as-a-service/316741158833/2yawhsgcpwj4q73mrdc7cd/0195da2a-a03a-7a87-9556-33923a17e13d.png",
-                          "https://storage.googleapis.com/static.aihub.com/as-a-service/316741158833/2yawhsgcpwj4q73mrdc7cd/0195da2a-a13f-7634-862d-2f982845353d.png",
-                          "https://storage.googleapis.com/static.aihub.com/as-a-service/316741158833/2yawhsgcpwj4q73mrdc7cd/0195da2a-a238-7612-921d-79e76312483d.png"
+                          "https://i.imgur.com/RdRi7YP.png",
+                          "https://i.imgur.com/B4CSnXD.png",
+                          "https://i.imgur.com/du1rApC.png",
+                          "https://i.imgur.com/LAys5wa.png"
                         ].map((src, i) => (
-                          <div key={i} className="aspect-[3/4] bg-neutral-200 overflow-hidden">
+                          <div key={i} className="bg-neutral-50 overflow-hidden border border-neutral-100 flex items-center justify-center">
                             <img 
                               src={src} 
                               alt={`SNS Content Example ${i + 1}`} 
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                              className="w-full h-auto block hover:scale-105 transition-transform duration-500"
                               referrerPolicy="no-referrer"
-                              crossOrigin="anonymous"
                             />
                           </div>
                         ))}
@@ -137,10 +151,6 @@ export default function Career() {
                 onClick={() => toggleItem('mall')}
               >
                 <div className="space-y-6">
-                  <p className="text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    고객 편의성과 세일즈 목적의 자사몰 리뉴얼 작업을 기획하였습니다.<br />
-                    기초 HTML 퍼블리셔를 학습하여 웹사이트를 유동적으로 배리에이션 하였습니다.
-                  </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
@@ -154,11 +164,42 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
                         <li>기획전 페이지를 통한 자사몰 프로모션 운영</li>
                         <li>가시성 높은 카테고리 분류</li>
                         <li>스냅 이미지 활용을 통한 콘텐츠 활용</li>
                       </ul>
+                      
+                      <div className="pt-8 border-t border-neutral-100">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                          <div className="relative">
+                            <div className="absolute top-0 left-0 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 z-10">
+                              Before
+                            </div>
+                            <div className="border border-neutral-100 overflow-hidden bg-neutral-50">
+                              <img 
+                                src="https://i.imgur.com/pB2Gq7G.png" 
+                                alt="Mall Renewal Before" 
+                                className="w-full h-auto block"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          </div>
+                          <div className="relative">
+                            <div className="absolute top-0 left-0 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 z-10">
+                              After
+                            </div>
+                            <div className="border border-neutral-100 overflow-hidden bg-neutral-50">
+                              <img 
+                                src="https://i.imgur.com/LYvZTq8.png" 
+                                alt="Mall Renewal After" 
+                                className="w-full h-auto block"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -168,7 +209,7 @@ export default function Career() {
 
           {/* Performance Marketing */}
           <div>
-            <h3 className="font-sans text-xl tracking-widest font-bold mb-4 flex items-center text-neutral-800">
+            <h3 className="font-sans text-lg md:text-xl tracking-normal md:tracking-widest font-bold mb-4 flex items-center text-neutral-800">
               PERFORMANCE MARKETING
             </h3>
             <div className="flex flex-col">
@@ -177,16 +218,72 @@ export default function Career() {
                 isOpen={!!openItems['meta']}
                 onClick={() => toggleItem('meta')}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div className="bg-neutral-900 text-white p-8 md:p-10 rounded-sm shadow-md">
-                    <p className="serif text-4xl md:text-5xl font-bold mb-2">ROAS 800%</p>
-                    <p className="text-base opacity-70">최고 달성 1,123%</p>
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    프로모션에 상응하는 메타 광고 프로세스를 최적화 하였습니다.<br />
+                    데이터 분석과 테스트를 거쳐 최종 ROAS 800%대를 유지 하였습니다.
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                        <li>무신사 기획전 연계 광고 소재 기획</li>
+                        <li>광고 유형, 소재, 캠페인 별 테스트</li>
+                        <li>광고 라이브를 위한 기본 매뉴얼 제작, 제품 세트 구성</li>
+                        <li>데이터 분석을 통한 NEXT STEP 도출</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                        <li>월 평균 ROAS 800%대 유지</li>
+                        <li>월 최고 ROAS 1,123% 달성 (2024년 겨울 무진장)</li>
+                        <li>무신사 협력광고 우수 브랜드 선정</li>
+                      </ul>
+                      
+                      <div className="h-[300px] w-full mt-8 pb-12">
+                        <p className="text-sm font-bold text-neutral-500 mb-4">ROAS Trend (%)</p>
+                        <ResponsiveContainer width="100%" height="100%">
+                          <LineChart data={roasData} margin={{ top: 5, right: 20, left: 0, bottom: 25 }}>
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+                            <XAxis 
+                              dataKey="date" 
+                              axisLine={false} 
+                              tickLine={false} 
+                              tick={{ fontSize: 12, fill: '#888' }} 
+                              dy={10}
+                            />
+                            <YAxis 
+                              axisLine={false} 
+                              tickLine={false} 
+                              tick={{ fontSize: 12, fill: '#888' }}
+                              tickFormatter={(value) => `${value}%`}
+                            />
+                            <Tooltip 
+                              contentStyle={{ 
+                                borderRadius: '8px', 
+                                border: 'none', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                fontSize: '11px',
+                                padding: '8px 12px'
+                              }}
+                              itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
+                              formatter={(value: number) => [`${value}%`, 'ROAS']}
+                            />
+                            <Line 
+                              type="monotone" 
+                              dataKey="roas" 
+                              stroke="#000" 
+                              strokeWidth={3} 
+                              dot={{ r: 6, fill: '#000', strokeWidth: 2, stroke: '#fff' }} 
+                              activeDot={{ r: 8, fill: '#000', strokeWidth: 0 }}
+                              animationDuration={2000}
+                            />
+                          </LineChart>
+                        </ResponsiveContainer>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-4">
-                    <li>무신사 기획전 연계 광고 소재 기획</li>
-                    <li>데이터 분석을 통한 NEXT STEP 도출</li>
-                    <li>무신사 협력광고 우수 브랜드 선정</li>
-                  </ul>
                 </div>
               </AccordionItem>
 
@@ -195,16 +292,37 @@ export default function Career() {
                 isOpen={!!openItems['kakao']}
                 onClick={() => toggleItem('kakao')}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div className="bg-yellow-400 text-black p-8 md:p-10 rounded-sm shadow-md">
-                    <p className="serif text-4xl md:text-5xl font-bold mb-2">CTR +8%</p>
-                    <p className="text-base opacity-70">쿠폰 클릭/발급율 7-10% 상승</p>
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    자사몰 프로모션 별 퍼포먼스 마케팅을 집행하였습니다.<br />
+                    카카오톡 플러스 친구 쿠폰을 통해 전환율을 증대하였습니다. (평균 15건)
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                        <li>메시지 유형/광고 소재 테스트</li>
+                        <li>쿠폰 발급 및 사용률 증대를 위한 테스트</li>
+                        <li>광고 라이브 및 데이터 분석 NEXT STEP 도출</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                        <li>메시지 평균 CTR 8% 상승</li>
+                        <li>메시지 할인율별 소재 구성 매뉴얼화</li>
+                        <li>쿠폰 클릭율 및 발급율 7-10% 상승</li>
+                      </ul>
+                      <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
+                        <img 
+                          src="https://i.imgur.com/woUqtUA.png" 
+                          alt="Kakao CRM Performance" 
+                          className="w-full h-auto block"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-4">
-                    <li>메시지 유형/광고 소재 테스트</li>
-                    <li>카플친 메시지 할인율별 소재 구성 매뉴얼화</li>
-                    <li>전환율 증대 (평균 15건)</li>
-                  </ul>
                 </div>
               </AccordionItem>
             </div>
@@ -212,7 +330,7 @@ export default function Career() {
 
           {/* Celeb Collabo */}
           <div>
-            <h3 className="font-sans text-xl tracking-widest font-bold mb-4 flex items-center text-neutral-800">
+            <h3 className="font-sans text-lg md:text-xl tracking-normal md:tracking-widest font-bold mb-4 flex items-center text-neutral-800">
               CELEB COLLABO & SEEDING
             </h3>
             <div className="flex flex-col">
@@ -221,20 +339,96 @@ export default function Career() {
                 isOpen={!!openItems['zb1']}
                 onClick={() => toggleItem('zb1')}
               >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="md:col-span-1">
-                    <div className="p-6 border-l-4 border-black bg-white shadow-sm">
-                      <p className="text-3xl font-bold">매출 9억</p>
-                      <p className="text-xs text-neutral-500 mt-2">발매 후 7일 기준</p>
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    판매까지의 전 마케팅을 총괄하였습니다.<br />
+                    브랜딩과 세일즈 관점으로 모델을 제안하고, 팬덤 타깃 상품을 기획하여 완판하였습니다.
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">마케팅 총괄</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>캠페인 타임라인 플래닝</li>
+                            <li>촬영 현장 마케팅 핸들링</li>
+                            <li>콘텐츠 기획 및 온라인 매체 플래닝/릴리즈</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">브랜드 모델 제안</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>브랜드 성숙기 극복</li>
+                            <li>영타깃 확장 및 변화한 브랜드 컨셉 재고</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">상품 기획</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>모델 및 팬덤 상징 요소 활용 그래픽 제품 제안</li>
+                            <li>브랜드 스테디 디자인과의 연결성</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">GWP 기획(포토카드)</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>이전 진행 이력 피드백 반영</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">연계 프로모션 진행</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>매출 증대를 위한 구매 인증 이벤트 진행</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="md:col-span-2 text-base text-neutral-600 space-y-6">
-                    <p>브랜딩과 세일즈 관점으로 모델을 제안하고, 팬덤 타깃 상품을 기획하여 완판하였습니다.</p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>캠페인 타임라인 플래닝 및 마케팅 총괄</li>
-                      <li>모델 상징 컬러와 팬덤명 그래픽 활용 제품 제안</li>
-                      <li>무신사 브랜드 랭킹 1위 달성</li>
-                    </ul>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                        <li>매출 9억 달성 (발매 후 7일 기준)</li>
+                        <li>기획 제품 완판 및 리오더 진행</li>
+                        <li>무신사 브랜드 랭킹 1위 및 상품 랭킹 상위권 달성</li>
+                        <li>국내 트위터 실시간 트렌드 달성</li>
+                      </ul>
+
+                      <div className="flex flex-wrap gap-3 mb-8">
+                        <a 
+                          href="https://romanticcrown.com/page/24_SPRING_01.html" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          Lookbook <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                        <a 
+                          href="https://www.youtube.com/watch?v=xHsL9OtpHFs" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          Main Video <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                        <a 
+                          href="https://www.starnewsk.com/news/articleView.html?idxno=40161" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          News <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                      </div>
+
+                      <div className="border border-neutral-100 overflow-hidden bg-neutral-50">
+                        <img 
+                          src="https://i.imgur.com/KAEJRoB.png" 
+                          alt="ZB1 Collaboration" 
+                          className="w-full h-auto block"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AccordionItem>
@@ -244,20 +438,160 @@ export default function Career() {
                 isOpen={!!openItems['woozi']}
                 onClick={() => toggleItem('woozi')}
               >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="md:col-span-1">
-                    <div className="p-6 border-l-4 border-black bg-white shadow-sm">
-                      <p className="text-3xl font-bold">매출 12억</p>
-                      <p className="text-xs text-neutral-500 mt-2">발매 후 7일 기준</p>
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    판매까지의 전 마케팅을 총괄하였습니다.<br />
+                    셀럽의 특성(세계관)을 적용할 수 있는 컨셉을 제안하였습니다.
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">마케팅 총괄</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>캠페인 타임라인 플래닝</li>
+                            <li>촬영 현장 마케팅 핸들링</li>
+                            <li>콘텐츠 기획 및 온라인 매체 플래닝/릴리즈</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">컨셉 제안</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>셀럽의 특성(세계관)을 적용할 수 있는 컨셉 제안</li>
+                          </ul>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">연계 프로모션 진행</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>카카오톡 채널 활성화를 위한 이벤트 진행</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                        <li>매출 12억 달성 (발매 후 7일 기준)</li>
+                        <li>무신사 브랜드 랭킹 1위 및 상품 랭킹 상위권 달성</li>
+                        <li>국내 트위터 실시간 트렌드 달성</li>
+                        <li>무신사 옥외광고 구좌 획득 (파트너사 이벤트)</li>
+                        <li>카카오톡 채널 친구 수 약 500명 증가 (이벤트)</li>
+                      </ul>
+
+                      <div className="flex flex-wrap gap-3 mb-8">
+                        <a 
+                          href="https://romanticcrown.com/page/22_FALL_WINTER_01.html" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          Lookbook <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                        <a 
+                          href="https://www.youtube.com/watch?v=WcbOHDq9ChM" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          Main Video <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                        <a 
+                          href="https://www.interview365.com/news/articleView.html?idxno=105375" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                        >
+                          News <ExternalLink className="ml-2 w-3 h-3" />
+                        </a>
+                      </div>
+
+                      <div className="border border-neutral-100 overflow-hidden bg-neutral-50">
+                        <img 
+                          src="https://i.imgur.com/CeuxQYN.png" 
+                          alt="Woozi Collaboration" 
+                          className="w-full h-auto block"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className="md:col-span-2 text-base text-neutral-600 space-y-6">
-                    <p>셀럽의 특성(세계관)을 적용할 수 있는 컨셉을 제안하였습니다.</p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>무신사 옥외광고 구좌 획득</li>
-                      <li>카카오톡 채널 친구 수 약 500명 증가</li>
-                      <li>국내 트위터 실시간 트렌드 달성</li>
-                    </ul>
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                title="인플루언서 시딩 활용"
+                isOpen={!!openItems['seeding']}
+                onClick={() => toggleItem('seeding')}
+              >
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    시즌 발매 및 이슈 홍보를 위한 인플루언서 시딩, 협찬을 진행하였습니다.<br />
+                    2차 활용을 위한 캠페인 기획/진행, 제안을 통해 구매 전환이 발생하였습니다.
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                        <li>톤앤매너를 고려한 인플루언서 리스트업</li>
+                        <li>협찬, 시딩 커뮤니케이션</li>
+                        <li>이미지 2차 활용 및 추가 활용 제안 (광고 소재, 썸네일, 스냅 이미지 등)</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">주요 캠페인</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">엔시티 위시 (아이돌) 손민수 콘텐츠</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>셀럽 착용 이슈를 활용한 2차 바이럴</li>
+                            <li>유명 팬 크리에이터 리스트업</li>
+                            <li>제품 제공 및 콘텐츠 발행</li>
+                          </ul>
+                          <div className="flex flex-wrap gap-2 mt-3">
+                            <a 
+                              href="https://www.instagram.com/reel/DK67BXUTxLv/" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-600 text-[11px] font-medium rounded-full transition-colors"
+                            >
+                              <Instagram size={12} /> 콘텐츠 1
+                            </a>
+                            <a 
+                              href="https://www.instagram.com/p/DLMPBv_R9S-/" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-600 text-[11px] font-medium rounded-full transition-colors"
+                            >
+                              <Instagram size={12} /> 콘텐츠 2
+                            </a>
+                            <a 
+                              href="https://www.instagram.com/reel/DLPXYY3ypRh/" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-flex items-center gap-1.5 px-3 py-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-600 text-[11px] font-medium rounded-full transition-colors"
+                            >
+                              <Instagram size={12} /> 콘텐츠 3
+                            </a>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="font-bold text-neutral-800 text-sm">인플루언서 착용 이미지 썸네일 제안</p>
+                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                            <li>무신사 스토어 내 정량적 수치 부진 (클릭율, 좋아요, 판매 등)</li>
+                            <li>일반인 착용 이미지에 대한 선호 트렌드 반영</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                        <li>손민수 콘텐츠 3건 발행 : 조회수 33만, 공유수 2천7백, 구매전환수 약 80건 발생 (1개월 기준)</li>
+                        <li>썸네일 교체 이후 클릭율 최대 50% 증가</li>
+                        <li>무신사 브랜드 스냅 활성화 (좋아요 평균 50개, 랭킹 1위 다수 기록)</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </AccordionItem>
@@ -270,8 +604,8 @@ export default function Career() {
       <section>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">ROUND MEDIA - Social Contents</h2>
-            <p className="text-lg text-neutral-600">채널 운영/기획 및 콘텐츠 제작</p>
+            <h2 className="text-2xl md:text-4xl font-bold mb-2">라운드미디어 소셜콘텐츠팀</h2>
+            <p className="text-base md:text-lg text-neutral-600">뷰티패션 매거진 에디터 / 광고주 채널 운영 기획</p>
           </div>
           <p className="serif text-xl font-medium text-neutral-600 mt-4 md:mt-0">2020.01 - 2021.01</p>
         </div>
@@ -282,15 +616,28 @@ export default function Career() {
             isOpen={!!openItems['naver']}
             onClick={() => toggleItem('naver')}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="bg-green-50 border border-green-100 shadow-sm p-8 md:p-10 rounded-sm">
-                <p className="font-bold text-2xl text-green-800">팔로워 230% 성장</p>
-                <p className="text-base text-green-700 mt-2">1,500 → 5,000명</p>
+            <div className="space-y-6">
+              <div className="flex flex-col space-y-6">
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">진행업무</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>채널 운영, 콘텐츠 기획, 에디팅</li>
+                    <li>PPL/브랜디드 콘텐츠 작업 및 커뮤니케이션</li>
+                    <li>채널 소개서 제작 및 아웃바운드</li>
+                    <li>주간/월간 게재 보고 및 결과 분석</li>
+                    <li>간단한 디자인/영상 작업</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">결과</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>팔로워 1,500명 → 5,000명 (230%)</li>
+                    <li>일방문횟수 80,000회 → 300,000회 (275%)</li>
+                    <li>네이버 패션뷰티판 메인 노출 월 5-15회</li>
+                    <li>목표 검색 키워드 네이버 상위 노출 90% 달성</li>
+                  </ul>
+                </div>
               </div>
-              <ul className="text-base text-neutral-600 space-y-4">
-                <li>• 네이버 패션뷰티판 메인 노출 월 5-15회</li>
-                <li>• 목표 키워드 상위 노출 90% 달성</li>
-              </ul>
             </div>
           </AccordionItem>
 
@@ -299,14 +646,62 @@ export default function Career() {
             isOpen={!!openItems['youtube']}
             onClick={() => toggleItem('youtube')}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="bg-red-50 border border-red-100 shadow-sm p-8 md:p-10 rounded-sm">
-                <p className="font-bold text-2xl text-red-800">조회수 160% 상승</p>
-                <p className="text-base text-red-700 mt-2">시즌2 평균 1,300회</p>
+            <div className="space-y-6">
+              <div className="flex flex-col space-y-6">
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">진행업무</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>영상 콘텐츠 기획</li>
+                    <li>영상 콘텐츠 제작 및 출연</li>
+                    <li>스토리보드/스크립트 작성 및 디렉팅</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">결과</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>평균 조회수 500회 → 1,300회(시즌2) (160%)</li>
+                    <li>네이버포스트 채널 콘텐츠 연계로 추가 수익 발생</li>
+                    <li>자사 레퍼런스 콘텐츠로 활용</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">콘텐츠 예시</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <p className="font-bold text-neutral-800 text-sm">뷰리핑 (시즌1)</p>
+                        <a 
+                          href="https://www.youtube.com/watch?v=TfZuAjQT_ek&t=1s" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 bg-red-50 hover:bg-red-100 text-red-600 text-[10px] font-bold rounded transition-colors"
+                        >
+                          <Youtube size={10} /> WATCH
+                        </a>
+                      </div>
+                      <p className="text-sm text-neutral-600 leading-relaxed">
+                        언박싱 형태로 뷰티를 브리핑하듯 간단히 보여주는 콘텐츠
+                      </p>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <p className="font-bold text-neutral-800 text-sm">뷰식가 (시즌2)</p>
+                        <a 
+                          href="https://www.youtube.com/watch?v=AwEY60hOH9M" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 bg-red-50 hover:bg-red-100 text-red-600 text-[10px] font-bold rounded transition-colors"
+                        >
+                          <Youtube size={10} /> WATCH
+                        </a>
+                      </div>
+                      <p className="text-sm text-neutral-600 leading-relaxed">
+                        제품을 음식에 비유하여 미식가가 뷰티를 맛보는 컨셉의 콘텐츠
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-base text-neutral-600 leading-relaxed">
-                뷰리핑(시즌1), 뷰식가(시즌2) 등 독창적 컨셉 기획 및 영상 콘텐츠 제작 총괄
-              </p>
             </div>
           </AccordionItem>
 

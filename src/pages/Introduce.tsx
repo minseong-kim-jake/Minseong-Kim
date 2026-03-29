@@ -9,9 +9,9 @@ export default function Introduce() {
   const [showEmail, setShowEmail] = useState(false);
 
   const coreValues = [
-    { title: "DETAIL", desc: "단독으로도 놓치지 않는 디테일" },
-    { title: "CONNECT", desc: "브랜드 내부의 방향성" },
-    { title: "FLEXIBILITY", desc: "트렌드를 읽는 유연함" },
+    { title: "ALIGNMENT", desc: "방향을 맞춥니다" },
+    { title: "BALANCE", desc: "균형을 설계합니다" },
+    { title: "CONNECTION", desc: "연결을 만듭니다" },
   ];
 
   return (
@@ -49,16 +49,21 @@ export default function Introduce() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-black text-white py-12 md:py-24 px-8 md:px-24 -mx-8 md:-mx-24 mb-12 md:mb-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          {coreValues.map((item) => (
-            <div key={item.title} className="group">
-              <h3 className="serif text-4xl md:text-5xl mb-4 opacity-40 group-hover:opacity-100 transition-opacity duration-500 text-white">
-                {item.title}
-              </h3>
-              <p className="text-lg font-medium">{item.desc}</p>
-            </div>
-          ))}
+      <section className="bg-black text-white py-12 md:py-16 px-8 md:px-24 -mx-8 md:-mx-24 mb-12 md:mb-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+            {coreValues.map((item, index) => (
+              <div key={item.title} className="group border-t border-neutral-800 pt-6 md:pt-8 flex flex-row items-center md:flex-col md:items-start">
+                <span className="text-neutral-600 font-mono text-sm mr-4 md:mb-4 md:block">0{index + 1}</span>
+                <h3 className="serif text-xl md:text-4xl text-white tracking-tighter mr-auto md:mr-0 md:mb-4 md:w-full">
+                  {item.title}
+                </h3>
+                <p className="text-neutral-400 text-sm md:text-base font-medium leading-relaxed text-right md:text-left">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

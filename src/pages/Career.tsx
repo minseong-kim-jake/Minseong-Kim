@@ -51,7 +51,7 @@ function AccordionItem({ title, children, isOpen, onClick }: AccordionItemProps)
     <div className={`border-b border-neutral-200 transition-colors duration-300 ${isOpen ? 'bg-neutral-50' : 'hover:bg-neutral-50/50'}`}>
       <button
         onClick={onClick}
-        className="w-full flex justify-between items-center group text-left py-5 px-4 md:px-6"
+        className="w-full flex justify-between items-center group text-left py-2.5 md:py-3 px-4 md:px-6"
       >
         <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
           <h4 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? 'text-black' : 'text-neutral-400 group-hover:text-black'}`}>
@@ -111,7 +111,7 @@ export default function Career() {
       <div className="px-8 md:px-24 max-w-7xl mx-auto">
         {/* RMTC Section */}
         <section className="mb-16 md:mb-32">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12 border-b-2 border-black pb-4">
           <div className="w-full">
             <div className="flex justify-between items-baseline mb-1 md:mb-2">
               <h2 className="text-xl md:text-4xl font-bold">알엠티씨 로맨틱크라운 마케팅</h2>
@@ -635,7 +635,7 @@ export default function Career() {
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                        <li>팬 인플루언서 시딩 : 콘텐츠 3건 <span className="font-bold text-neutral-900">조회수 33만 / 구매전환수 약 80건</span> 발생 (1개월)</li>
+                        <li>팬 인플루언서 시딩 : 콘텐츠 3건 조회수 33만 / 구매전환수 약 80건 발생 (1개월)</li>
                         <li>무신사 제품 클릭율 최대 <span className="font-bold text-neutral-900">50%</span> 증가</li>
                         <li>무신사 브랜드 스냅 활성화 (좋아요 증가, 랭킹 1위 다수 기록)</li>
                       </ul>
@@ -650,7 +650,7 @@ export default function Career() {
 
       {/* Round Media Section */}
       <section>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12 border-b-2 border-black pb-4">
           <div className="w-full">
             <div className="flex justify-between items-baseline mb-1 md:mb-2">
               <h2 className="text-xl md:text-4xl font-bold">라운드미디어 소셜콘텐츠팀</h2>
@@ -681,10 +681,10 @@ export default function Career() {
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
                   <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                    <li>팔로워 1,500명 → 5,000명 (230%)</li>
-                    <li>일방문횟수 80,000회 → 300,000회 (275%)</li>
+                    <li>팔로워 230% 증가 (누적 5천명)</li>
+                    <li>일방문횟수 275% 증가 (30만회)</li>
                     <li>네이버 패션뷰티판 메인 노출 월 5-15회</li>
-                    <li>목표 검색 키워드 네이버 상위 노출 90% 달성</li>
+                    <li>목표 검색 키워드 상위 노출 90% 달성</li>
                   </ul>
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -726,17 +726,15 @@ export default function Career() {
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">진행업무</p>
                   <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                    <li>영상 콘텐츠 기획</li>
-                    <li>영상 콘텐츠 제작 및 출연</li>
+                    <li>콘텐츠 기획, 제작 및 출연</li>
                     <li>스토리보드/스크립트 작성 및 디렉팅</li>
                   </ul>
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
                   <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                    <li>평균 조회수 500회 → 1,300회(시즌2) (160%)</li>
-                    <li>네이버포스트 채널 콘텐츠 연계로 추가 수익 발생</li>
-                    <li>자사 레퍼런스 콘텐츠로 활용</li>
+                    <li>평균 조회수 160% 증가 (시즌2)</li>
+                    <li>네이버 포스트 연계로 추가 수익 창출</li>
                   </ul>
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -755,7 +753,7 @@ export default function Career() {
                         </a>
                       </div>
                       <p className="text-sm text-neutral-600 leading-relaxed">
-                        언박싱 형태로 뷰티를 브리핑하듯 간단히 보여주는 콘텐츠
+                        뷰티를 브리핑하듯 소개하는 언박싱 콘텐츠
                       </p>
                     </div>
                     <div className="space-y-3">
@@ -771,7 +769,7 @@ export default function Career() {
                         </a>
                       </div>
                       <p className="text-sm text-neutral-600 leading-relaxed">
-                        제품을 음식에 비유하여 미식가가 뷰티를 맛보는 컨셉의 콘텐츠
+                        미식가가 맛보는 듯 제품을 음식에 비유한 콘텐츠
                       </p>
                     </div>
                   </div>
@@ -862,7 +860,7 @@ export default function Career() {
               <div className="overflow-y-auto p-8 md:p-20 custom-scrollbar flex items-center min-h-[60vh]">
                 <div className="flex overflow-x-auto gap-6 pb-10 snap-x custom-scrollbar -mx-4 px-4 w-full">
                   {selectedGallery.images.map((img, idx) => (
-                    <div key={idx} className="flex-none w-[55%] md:w-[28%] aspect-[3/4] overflow-hidden snap-center bg-neutral-100 shadow-xl">
+                    <div key={idx} className="flex-none w-[75%] md:w-[28%] aspect-[3/4] overflow-hidden snap-center bg-neutral-100 shadow-xl">
                       <img 
                         src={img} 
                         alt={`${selectedGallery.title} - ${idx + 1}`} 

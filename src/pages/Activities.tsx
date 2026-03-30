@@ -20,7 +20,7 @@ export default function Activities() {
       </header>
 
       <div className="px-8 md:px-24 max-w-7xl mx-auto mb-8 md:mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-3 tracking-tight">Selected Works.</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-3 tracking-tight">Selected Works</h2>
         <p className="text-neutral-500 text-xs md:text-sm leading-tight max-w-2xl">
           브랜드 콘텐츠를 직접 기획하고 제작하며<br />
           마케팅을 경험한 공식 활동입니다.
@@ -38,7 +38,7 @@ export default function Activities() {
               displayDate: "2018.06",
               displayImage: "https://i.imgur.com/NRhiAWJ.png",
               modalTitle: "It's not all,\nIt's Loccitane",
-              modalDesc: "'록시땅=핸드크림이 전부’라는 인식에서 벗어나, 브랜드 내 제품 라인을 가볍게 키워드로 소개하는 이미지 콘텐츠입니다. 인스타그램 스와이프 특성을 활용하여, 표지와 마지막 이미지의 연결성을 강조하였습니다.",
+              modalDesc: "'록시땅=핸드크림이 전부' 라는 인식에서 벗어나, 주요 제품 라인을 가볍게 소개하는 콘텐츠입니다. 인스타그램 스와이프 특성을 활용하여, 표지의 마지막 이미지의 연결성을 강조하였습니다.",
               role: "단독 기획, 제작",
               brand: "록시땅 코리아",
               period: "2018.06 - 2018.08",
@@ -223,7 +223,7 @@ export default function Activities() {
       </AnimatePresence>
 
       <div className="px-8 md:px-24 max-w-7xl mx-auto mb-24 md:mb-32">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">All Projects.</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">All Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             {

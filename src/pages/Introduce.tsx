@@ -81,8 +81,8 @@ export default function Introduce() {
         
         <div className="space-y-8 md:space-y-12">
           <div>
-            <h2 className="text-5xl font-bold mb-8 md:mb-12 flex items-baseline gap-4 flex-wrap">
-              김민성 <span className="text-3xl font-medium text-neutral-500">Kim Min-seong</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12 flex items-baseline gap-2 md:gap-4">
+              김민성 <span className="text-xl md:text-[28px] font-medium text-neutral-500 whitespace-nowrap">Kim Min-seong</span>
             </h2>
             <div className="mt-8 md:mt-12 space-y-2 text-lg text-neutral-600">
               <div className="flex flex-col space-y-0.5">

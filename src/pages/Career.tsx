@@ -31,12 +31,12 @@ const bravoLifeContents = [
 ];
 
 const roasData = [
-  { date: "2024.05", roas: 422 },
-  { date: "2024.07", roas: 462 },
-  { date: "2024.09", roas: 662 },
-  { date: "2024.11", roas: 1123 },
-  { date: "2025.01", roas: 962 },
-  { date: "2025.02", roas: 821 },
+  { date: "24.05", roas: 422 },
+  { date: "24.07", roas: 462 },
+  { date: "24.09", roas: 662 },
+  { date: "24.11", roas: 1123 },
+  { date: "25.01", roas: 962 },
+  { date: "25.02", roas: 821 },
 ];
 
 interface AccordionItemProps {
@@ -112,11 +112,13 @@ export default function Career() {
         {/* RMTC Section */}
         <section className="mb-16 md:mb-32">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2">알엠티씨 로맨틱크라운 마케팅</h2>
-            <p className="text-base md:text-lg text-neutral-600">패션 브랜드 IMC 마케팅 단독 운영</p>
+          <div className="w-full">
+            <div className="flex justify-between items-baseline mb-1 md:mb-2">
+              <h2 className="text-xl md:text-4xl font-bold">알엠티씨 로맨틱크라운 마케팅</h2>
+              <p className="text-[11px] md:text-base font-medium text-neutral-500 whitespace-nowrap">22.03 - 25.11</p>
+            </div>
+            <p className="text-sm md:text-lg text-neutral-600">패션 브랜드 IMC 마케팅 단독 운영</p>
           </div>
-          <p className="text-sm md:text-base font-medium text-neutral-600 mt-4 md:mt-0">2022.03 - 2025.11</p>
         </div>
 
         <div className="space-y-16">
@@ -139,7 +141,7 @@ export default function Career() {
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>SNS 채널 운영 관리</li>
                         <li>SNS 이벤트 기획 및 실행</li>
                         <li>이미지/영상 콘텐츠 기획, 촬영, 편집</li>
@@ -147,11 +149,11 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">콘텐츠 예시</p>
-                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2 mb-6">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-6">
                         <li>룩북과 디테일컷 외적으로 제품과 무드를 가볍게 풀 수 있는 콘텐츠</li>
                         <li>프레피 → 스트릿 스타일로 변화한 과정에 적합한 브랜딩 요소</li>
                       </ul>
-                      <div className="grid grid-cols-2 gap-1.5 mt-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-8">
                         {[
                           "https://i.imgur.com/RdRi7YP.png",
                           "https://i.imgur.com/B4CSnXD.png",
@@ -171,10 +173,8 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">내부 브랜드 촬영 지원</p>
-                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2 mb-6">
-                        <li>
-                          내부 브랜드 <a href="https://www.instagram.com/niier_nor_official/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline font-bold">niiernor</a>의 SNS 콘텐츠 촬영
-                        </li>
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-6">
+                        <li>브랜드 <a href="https://www.instagram.com/niier_nor_official/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline font-bold">niiernor</a> SNS 콘텐츠 촬영</li>
                         <li>브랜딩을 고려한 러프한 이미지, 백스테이지 컷</li>
                       </ul>
                       <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
@@ -199,7 +199,7 @@ export default function Career() {
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>상황 분석 및 레퍼런스/벤치마킹</li>
                         <li>고객 구매 여정에 따른 메뉴 구조도 기획</li>
                         <li>내부 파트별 필요 기능 취합</li>
@@ -209,7 +209,7 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                         <li>기획전 페이지를 통한 자사몰 프로모션 운영</li>
                         <li>가시성 높은 카테고리 분류</li>
                         <li>스냅 이미지 활용을 통한 콘텐츠 활용</li>
@@ -271,16 +271,16 @@ export default function Career() {
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>무신사 기획전 연계 광고 소재 기획</li>
                         <li>광고 유형, 소재, 캠페인 별 테스트</li>
                         <li>광고 라이브를 위한 기본 매뉴얼 제작, 제품 세트 구성</li>
                         <li>데이터 분석을 통한 NEXT STEP 도출</li>
                       </ul>
                     </div>
-                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-4 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                         <li>월 평균 <span className="font-bold text-neutral-900">ROAS 800%대</span> 유지</li>
                         <li>월 최고 <span className="font-bold text-neutral-900">ROAS 1,123%</span> 달성 (2024년 겨울 무진장)</li>
                         <li>무신사 협력광고 우수 브랜드 선정</li>
@@ -289,7 +289,7 @@ export default function Career() {
                       <div className="h-[300px] w-full mt-8 pb-12">
                         <p className="text-sm font-bold text-neutral-500 mb-4">ROAS Trend (%)</p>
                         <ResponsiveContainer width="100%" height="100%">
-                          <LineChart data={roasData} margin={{ top: 5, right: 20, left: 0, bottom: 25 }}>
+                          <LineChart data={roasData} margin={{ top: 5, right: 10, left: 0, bottom: 25 }}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                             <XAxis 
                               dataKey="date" 
@@ -297,6 +297,7 @@ export default function Career() {
                               tickLine={false} 
                               tick={{ fontSize: 12, fill: '#888' }} 
                               dy={10}
+                              padding={{ left: 10, right: 10 }}
                             />
                             <YAxis 
                               axisLine={false} 
@@ -345,7 +346,7 @@ export default function Career() {
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>메시지 유형/광고 소재 테스트</li>
                         <li>쿠폰 발급 및 사용률 증대를 위한 테스트</li>
                         <li>광고 라이브 및 데이터 분석 NEXT STEP 도출</li>
@@ -353,7 +354,7 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>메시지 <span className="font-bold text-neutral-900">평균 CTR 8%</span> 상승</li>
                         <li>메시지 할인율별 소재 구성 매뉴얼화</li>
                         <li>쿠폰 클릭율 및 발급율 <span className="font-bold text-neutral-900">7-10%</span> 상승</li>
@@ -395,7 +396,7 @@ export default function Career() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">마케팅 총괄</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>캠페인 타임라인 플래닝</li>
                             <li>촬영 현장 마케팅 핸들링</li>
                             <li>콘텐츠 기획 및 온라인 매체 플래닝/릴리즈</li>
@@ -403,27 +404,27 @@ export default function Career() {
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">브랜드 모델 제안</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>브랜드 성숙기 극복</li>
                             <li>영타깃 확장 및 변화한 브랜드 컨셉 재고</li>
                           </ul>
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">상품 기획</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>모델 및 팬덤 상징 요소 활용 그래픽 제품 제안</li>
                             <li>브랜드 스테디 디자인과의 연결성</li>
                           </ul>
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">GWP 기획(포토카드)</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>이전 진행 이력 피드백 반영</li>
                           </ul>
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">연계 프로모션 진행</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>매출 증대를 위한 구매 인증 이벤트 진행</li>
                           </ul>
                         </div>
@@ -431,7 +432,7 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                         <li>매출 9억 달성 (발매 후 7일 기준)</li>
                         <li>기획 제품 완판 및 리오더 진행</li>
                         <li>무신사 브랜드 랭킹 1위 및 상품 랭킹 상위권 달성</li>
@@ -494,7 +495,7 @@ export default function Career() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">마케팅 총괄</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>캠페인 타임라인 플래닝</li>
                             <li>촬영 현장 마케팅 핸들링</li>
                             <li>콘텐츠 기획 및 온라인 매체 플래닝/릴리즈</li>
@@ -502,13 +503,13 @@ export default function Career() {
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">컨셉 제안</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>셀럽의 특성(세계관)을 적용할 수 있는 컨셉 제안</li>
                           </ul>
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">연계 프로모션 진행</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>카카오톡 채널 활성화를 위한 이벤트 진행</li>
                           </ul>
                         </div>
@@ -516,7 +517,7 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                         <li>매출 12억 달성 (발매 후 7일 기준)</li>
                         <li>무신사 브랜드 랭킹 1위 및 상품 랭킹 상위권 달성</li>
                         <li>국내 트위터 실시간 트렌드 달성</li>
@@ -577,7 +578,7 @@ export default function Career() {
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>톤앤매너를 고려한 인플루언서 리스트업</li>
                         <li>협찬, 시딩 커뮤니케이션</li>
                         <li>이미지 2차 활용 및 추가 활용 제안 (광고 소재, 썸네일, 스냅 이미지 등)</li>
@@ -588,7 +589,7 @@ export default function Career() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">엔시티 위시 (아이돌) 손민수 콘텐츠</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>셀럽 착용 이슈를 활용한 2차 바이럴</li>
                             <li>유명 팬 크리에이터 리스트업</li>
                             <li>제품 제공 및 콘텐츠 발행</li>
@@ -622,7 +623,7 @@ export default function Career() {
                         </div>
                         <div className="space-y-2">
                           <p className="font-bold text-neutral-800 text-sm">인플루언서 착용 이미지 썸네일 제안</p>
-                          <ul className="list-disc list-inside text-base text-neutral-600 space-y-1">
+                          <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
                             <li>무신사 스토어 내 정량적 수치 부진 (클릭율, 좋아요, 판매 등)</li>
                             <li>일반인 착용 이미지에 대한 선호 트렌드 반영</li>
                           </ul>
@@ -631,7 +632,7 @@ export default function Career() {
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
-                      <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>손민수 콘텐츠 3건 발행 : <span className="font-bold text-neutral-900">조회수 33만, 공유수 2천7백, 구매전환수 약 80건</span> 발생 (1개월 기준)</li>
                         <li>썸네일 교체 이후 클릭율 최대 <span className="font-bold text-neutral-900">50%</span> 증가</li>
                         <li>무신사 브랜드 스냅 활성화 (좋아요 평균 50개, 랭킹 1위 다수 기록)</li>
@@ -648,11 +649,13 @@ export default function Career() {
       {/* Round Media Section */}
       <section>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-black pb-4">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2">라운드미디어 소셜콘텐츠팀</h2>
-            <p className="text-base md:text-lg text-neutral-600">뷰티패션 매거진 에디터 / 광고주 채널 운영 기획</p>
+          <div className="w-full">
+            <div className="flex justify-between items-baseline mb-1 md:mb-2">
+              <h2 className="text-xl md:text-4xl font-bold">라운드미디어 소셜콘텐츠팀</h2>
+              <p className="text-[11px] md:text-base font-medium text-neutral-500 whitespace-nowrap">20.01 - 21.01</p>
+            </div>
+            <p className="text-sm md:text-lg text-neutral-600">뷰티패션 매거진 에디터 / 광고주 채널 운영 기획</p>
           </div>
-          <p className="text-sm md:text-base font-medium text-neutral-600 mt-4 md:mt-0">2020.01 - 2021.01</p>
         </div>
 
         <div className="flex flex-col">
@@ -665,7 +668,7 @@ export default function Career() {
               <div className="flex flex-col space-y-6">
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">진행업무</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>채널 운영, 콘텐츠 기획, 에디팅</li>
                     <li>PPL/브랜디드 콘텐츠 작업 및 커뮤니케이션</li>
                     <li>채널 소개서 제작 및 아웃바운드</li>
@@ -675,7 +678,7 @@ export default function Career() {
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>팔로워 1,500명 → 5,000명 (230%)</li>
                     <li>일방문횟수 80,000회 → 300,000회 (275%)</li>
                     <li>네이버 패션뷰티판 메인 노출 월 5-15회</li>
@@ -720,7 +723,7 @@ export default function Career() {
               <div className="flex flex-col space-y-6">
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">진행업무</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>영상 콘텐츠 기획</li>
                     <li>영상 콘텐츠 제작 및 출연</li>
                     <li>스토리보드/스크립트 작성 및 디렉팅</li>
@@ -728,7 +731,7 @@ export default function Career() {
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>평균 조회수 500회 → 1,300회(시즌2) (160%)</li>
                     <li>네이버포스트 채널 콘텐츠 연계로 추가 수익 발생</li>
                     <li>자사 레퍼런스 콘텐츠로 활용</li>
@@ -784,7 +787,7 @@ export default function Career() {
               <div className="flex flex-col space-y-6">
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">진행 업무</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>채널 오픈 제안 (기본 톤앤매너 작업) 및 운영 관리</li>
                     <li>콘텐츠 기획 및 에디팅</li>
                     <li>게재보고/월간보고서 작성</li>
@@ -793,7 +796,7 @@ export default function Career() {
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                     <li>브랜드 온드미디어 확장</li>
                     <li>콘텐츠 톤 앤 매너 확립</li>
                   </ul>
@@ -837,7 +840,7 @@ export default function Career() {
               <div className="flex flex-col space-y-6">
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">진행업무</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                     <li>채널 오픈, 기본 톤 앤 매너 작업</li>
                     <li>콘텐츠 기획 및 에디팅 (월 20건 내외)</li>
                     <li>게재보고/월간보고서 작성</li>
@@ -847,7 +850,7 @@ export default function Career() {
                 </div>
                 <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                   <p className="font-bold text-lg mb-4">결과</p>
-                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                     <li>네이버블로그 일 평균 조회수 300회 달성</li>
                     <li>네이버블로그 이웃 400명 달성</li>
                     <li>인스타그램 팔로워 500명 달성</li>
@@ -905,13 +908,13 @@ export default function Career() {
             >
               <button 
                 onClick={() => setSelectedGallery(null)}
-                className="absolute top-6 right-6 md:top-10 md:right-10 p-3 hover:bg-neutral-100 rounded-full transition-colors z-50 bg-white/80 backdrop-blur-sm shadow-sm"
+                className="absolute top-6 right-6 md:top-10 md:right-10 p-2 hover:opacity-60 transition-opacity z-50"
               >
                 <X className="w-6 h-6 md:w-8 md:h-8 text-neutral-900" />
               </button>
               
-              <div className="overflow-y-auto p-8 md:p-20 no-scrollbar flex items-center min-h-[60vh]">
-                <div className="flex overflow-x-auto gap-6 pb-10 snap-x no-scrollbar -mx-4 px-4 w-full">
+              <div className="overflow-y-auto p-8 md:p-20 custom-scrollbar flex items-center min-h-[60vh]">
+                <div className="flex overflow-x-auto gap-6 pb-10 snap-x custom-scrollbar -mx-4 px-4 w-full">
                   {selectedGallery.images.map((img, idx) => (
                     <div key={idx} className="flex-none w-[55%] md:w-[28%] aspect-[3/4] overflow-hidden snap-center bg-neutral-100 shadow-xl">
                       <img 

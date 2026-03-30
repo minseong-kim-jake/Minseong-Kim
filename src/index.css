@@ -38,7 +38,45 @@ body {
   background: #555;
 }
 
+/* Custom scrollbar for sliders */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #f1f1f1;
+}
+
 .page-transition {
   width: 100%;
   min-height: 100vh;
+}
+
+.list-custom {
+  list-style: none !important;
+  padding-left: 0 !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+}
+
+.list-custom li {
+  display: flex !important;
+  gap: 0.4rem !important;
+  align-items: flex-start !important;
+}
+
+.list-custom li::before {
+  content: "" !important;
+  width: 3px !important;
+  height: 3px !important;
+  background-color: currentColor !important;
+  border-radius: 50% !important;
+  margin-top: 0.65em !important;
+  flex-shrink: 0 !important;
 }

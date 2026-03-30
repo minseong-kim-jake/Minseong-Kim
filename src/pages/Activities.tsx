@@ -14,8 +14,8 @@ export default function Activities() {
     >
       <header className="bg-black text-white pt-24 md:pt-32 pb-12 md:pb-24 px-8 md:px-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto">
-          <h1 className="serif text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">ACTIVITIES</h1>
-          <p className="text-neutral-400 text-lg">What I Explored</p>
+          <h1 className="serif text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">ACTIVITIES</h1>
+          <p className="text-neutral-400 text-lg tracking-widest">What I Explored</p>
         </div>
       </header>
 
@@ -37,7 +37,7 @@ export default function Activities() {
               modalSubtitle: "개인 최우수 콘텐츠",
               displayDate: "2018.06",
               displayImage: "https://i.imgur.com/NRhiAWJ.png",
-              modalTitle: "It's not all, It's Loccitane",
+              modalTitle: "It's not all,\nIt's Loccitane",
               modalDesc: "'록시땅=핸드크림이 전부’라는 인식에서 벗어나, 브랜드 내 제품 라인을 가볍게 키워드로 소개하는 이미지 콘텐츠입니다. 인스타그램 스와이프 특성을 활용하여, 표지와 마지막 이미지의 연결성을 강조하였습니다.",
               role: "단독 기획, 제작",
               brand: "록시땅 코리아",
@@ -57,7 +57,7 @@ export default function Activities() {
               modalSubtitle: "공식 채널 게재",
               displayDate: "2018.07",
               displayImage: "https://i.imgur.com/juiegk0.png",
-              modalTitle: "진라면, 과거와 현재를 잇다",
+              modalTitle: "진라면,\n과거와 현재를 잇다",
               modalDesc: "진라면 30주년 목적성에 맞춰, 1988년과 2018년의 시대별 진라면 활용법을 담은 CF 컨셉의 영상 콘텐츠입니다. 각 영상의 인트로, 아웃트로에 라면을 주고 받게 설정하여, 오랫동안 사랑 받는 진라면의 의미를 강조하였습니다.",
               role: "기획, 촬영, 편집 (80%)",
               brand: "오뚜기",
@@ -74,7 +74,7 @@ export default function Activities() {
               modalSubtitle: "브랜드 협업",
               displayDate: "2019.09",
               displayImage: "https://i.imgur.com/vhsiV2W.png",
-              modalTitle: "톡직구",
+              modalTitle: "톡직구 공모전 제안",
               modalDesc: "20대 타깃의 부정적 이미지 제고를 목적으로 한 공모전을 제안하였습니다. 틱톡 코리아와 협업하여 동아리 내부 경쟁 PT와 브랜드 측 심사를 통해 공모전을 진행하였습니다.",
               role: "기획, 제작, 브랜드 커뮤니케이션 (100%)",
               brand: "틱톡 코리아",
@@ -127,15 +127,15 @@ export default function Activities() {
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 md:top-10 md:right-10 p-3 hover:bg-neutral-100 rounded-full transition-colors z-50 bg-white/80 backdrop-blur-sm shadow-sm"
+                className="absolute top-6 right-6 md:top-10 md:right-10 p-2 hover:opacity-60 transition-opacity z-50"
               >
                 <X className="w-6 h-6 md:w-8 md:h-8 text-neutral-900" />
               </button>
 
               <div className="overflow-y-auto p-8 md:p-20 no-scrollbar">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[0.9]">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-8">
+                  <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.1] md:leading-[0.9] whitespace-pre-line">
                     {selectedProject.modalTitle}
                   </h2>
                   <p className="text-neutral-900 text-xs md:text-sm max-w-xs leading-relaxed font-medium">
@@ -144,7 +144,7 @@ export default function Activities() {
                 </div>
 
                 {/* Meta Info Bar */}
-                <div className="flex flex-wrap gap-x-12 gap-y-6 text-[10px] md:text-xs font-bold tracking-widest uppercase text-neutral-400 mb-16 border-t border-neutral-100 pt-10">
+                <div className="flex flex-wrap gap-x-12 gap-y-6 text-[10px] md:text-xs font-bold tracking-widest uppercase text-neutral-400 mb-10 md:mb-16 border-t border-neutral-100 pt-8">
                   <div className="flex flex-col gap-2">
                     <span className="text-neutral-900">Role</span>
                     <span className="font-medium text-neutral-500">{selectedProject.role}</span>
@@ -160,7 +160,7 @@ export default function Activities() {
                 </div>
 
                 {/* Visual Content */}
-                <div className="mb-24">
+                <div className="mb-12 md:mb-16">
                   {selectedProject.videos ? (
                     <div className={`grid grid-cols-1 ${selectedProject.videos.length > 1 ? 'md:grid-cols-2' : ''} gap-8`}>
                       {selectedProject.videos.map((video, vIdx) => (
@@ -190,7 +190,7 @@ export default function Activities() {
                       ))}
                     </div>
                   ) : (
-                    <div className="flex overflow-x-auto gap-6 pb-10 snap-x no-scrollbar -mx-4 px-4">
+                    <div className="flex overflow-x-auto gap-6 pb-10 snap-x custom-scrollbar -mx-4 px-4">
                       {selectedProject.images.map((img, iIdx) => (
                         <div key={iIdx} className="flex-none w-[65%] md:w-[50%] aspect-[4/3] overflow-hidden snap-center bg-neutral-100 shadow-md">
                           <img 
@@ -235,7 +235,7 @@ export default function Activities() {
                 { title: "디디치킨 디디프렌즈 (1위)", period: "2018.10 - 2018.12" },
                 { title: "오뚜기 진라면 진앤지니", period: "2018.07 - 2018.08" },
                 { title: "록시땅 시어캠퍼스", period: "2018.06 - 2018.08" },
-                { title: "이니스프리 그린어스 (종합 팀 1위) (우수 콘텐츠)", period: "2017.09 - 2018.02" },
+                { title: "이니스프리 그린어스 (팀 1위) (우수 콘텐츠)", period: "2017.09 - 2018.02" },
               ]
             },
             {

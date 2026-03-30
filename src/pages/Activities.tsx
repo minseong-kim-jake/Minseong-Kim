@@ -15,7 +15,7 @@ export default function Activities() {
       <header className="bg-black text-white pt-24 md:pt-32 pb-12 md:pb-24 px-8 md:px-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto">
           <h1 className="serif text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">ACTIVITIES</h1>
-          <p className="text-neutral-400 text-lg tracking-widest">What I Explored</p>
+          <p className="text-neutral-400 text-lg tracking-[0.2em]">What I Explored</p>
         </div>
       </header>
 

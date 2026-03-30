@@ -103,8 +103,8 @@ export default function Career() {
     >
       <header className="bg-black text-white pt-24 md:pt-32 pb-12 md:pb-24 px-8 md:px-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto">
-          <h1 className="serif text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">CAREER</h1>
-          <p className="text-neutral-400 text-lg">What I Execute</p>
+          <h1 className="serif text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">CAREER</h1>
+          <p className="text-neutral-400 text-lg tracking-[0.2em]">What I Execute</p>
         </div>
       </header>
 
@@ -135,8 +135,8 @@ export default function Career() {
               >
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    브랜드/시즌 컨셉을 반영한 콘텐츠를 기획하여 SNS 채널을 운영하였습니다.<br />
-                    인스타그램 채널 특성에 적합한 러프한 스타일로 촬영하였습니다.
+                    브랜드와 시즌 컨셉을 반영한 콘텐츠를 기획하여 채널을 운영하였습니다.<br />
+                    인스타그램 특성에 알맞는 러프한 스타일로 촬영하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -175,7 +175,7 @@ export default function Career() {
                       <p className="font-bold text-lg mb-4">내부 브랜드 촬영 지원</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-6">
                         <li>브랜드 <a href="https://www.instagram.com/niier_nor_official/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline font-bold">niiernor</a> SNS 콘텐츠 촬영</li>
-                        <li>브랜딩을 고려한 러프한 이미지, 백스테이지 컷</li>
+                        <li>컨셉에 맞는 러프한 이미지, 백스테이지 컷</li>
                       </ul>
                       <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
                         <img 
@@ -204,15 +204,15 @@ export default function Career() {
                         <li>고객 구매 여정에 따른 메뉴 구조도 기획</li>
                         <li>내부 파트별 필요 기능 취합</li>
                         <li>배너 및 위젯 이미지 가이드 제작</li>
-                        <li>CAFE24 기본 HTML 활용을 통한 배리에이션</li>
+                        <li>CAFE24 기본 HTML 배리에이션</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
                         <li>기획전 페이지를 통한 자사몰 프로모션 운영</li>
-                        <li>가시성 높은 카테고리 분류</li>
-                        <li>스냅 이미지 활용을 통한 콘텐츠 활용</li>
+                        <li>가시성 높은 카테고라이징</li>
+                        <li>스냅 이미지 콘텐츠 활용</li>
                       </ul>
                       
                       <div className="pt-8 border-t border-neutral-100">
@@ -274,22 +274,22 @@ export default function Career() {
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>무신사 기획전 연계 광고 소재 기획</li>
                         <li>광고 유형, 소재, 캠페인 별 테스트</li>
-                        <li>광고 라이브를 위한 기본 매뉴얼 제작, 제품 세트 구성</li>
+                        <li>라이브 매뉴얼 제작 및 제품 세트 구성</li>
                         <li>데이터 분석을 통한 NEXT STEP 도출</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-4 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
-                        <li>월 평균 <span className="font-bold text-neutral-900">ROAS 800%대</span> 유지</li>
-                        <li>월 최고 <span className="font-bold text-neutral-900">ROAS 1,123%</span> 달성 (2024년 겨울 무진장)</li>
+                        <li>평균 <span className="font-bold text-neutral-900">ROAS 800%</span> 유지</li>
+                        <li>최고 <span className="font-bold text-neutral-900">ROAS 1,123%</span> 달성 (2024.11)</li>
                         <li>무신사 협력광고 우수 브랜드 선정</li>
                       </ul>
                       
                       <div className="h-[300px] w-full mt-8 pb-12">
-                        <p className="text-sm font-bold text-neutral-500 mb-4">ROAS Trend (%)</p>
+                        <p className="text-sm font-bold text-neutral-500 mb-4 pl-3">ROAS (100%)</p>
                         <ResponsiveContainer width="100%" height="100%">
-                          <LineChart data={roasData} margin={{ top: 5, right: 10, left: 0, bottom: 25 }}>
+                          <LineChart data={roasData} margin={{ top: 5, right: 10, left: -10, bottom: 25 }}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                             <XAxis 
                               dataKey="date" 
@@ -303,7 +303,10 @@ export default function Career() {
                               axisLine={false} 
                               tickLine={false} 
                               tick={{ fontSize: 12, fill: '#888' }}
-                              tickFormatter={(value) => `${value}%`}
+                              width={40}
+                              domain={[0, 1200]}
+                              ticks={[0, 300, 600, 900, 1200]}
+                              tickFormatter={(value) => `${value / 100}`}
                             />
                             <Tooltip 
                               contentStyle={{ 
@@ -334,29 +337,28 @@ export default function Career() {
               </AccordionItem>
 
               <AccordionItem
-                title="KAKAO CRM"
+                title="CRM MARKETING"
                 isOpen={!!openItems['kakao']}
                 onClick={() => toggleItem('kakao')}
               >
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    자사몰 프로모션 별 퍼포먼스 마케팅을 집행하였습니다.<br />
-                    카카오톡 플러스 친구 쿠폰을 통해 전환율을 증대하였습니다. (평균 15건)
+                    자사몰 멤버십을 재정비하고 기획전 연계 혜택을 활용하였습니다.<br />
+                    카카오톡 메시지를 테스트 운영하여 전환율을 증대하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">진행업무</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>메시지 유형/광고 소재 테스트</li>
-                        <li>쿠폰 발급 및 사용률 증대를 위한 테스트</li>
-                        <li>광고 라이브 및 데이터 분석 NEXT STEP 도출</li>
+                        <li>광고 라이브 및 데이터 분석</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                        <li>메시지 <span className="font-bold text-neutral-900">평균 CTR 8%</span> 상승</li>
-                        <li>메시지 할인율별 소재 구성 매뉴얼화</li>
+                        <li>메시지 평균 <span className="font-bold text-neutral-900">CTR 8%</span> 상승</li>
+                        <li>프로모션 별 소재 구성 매뉴얼화</li>
                         <li>쿠폰 클릭율 및 발급율 <span className="font-bold text-neutral-900">7-10%</span> 상승</li>
                       </ul>
                       <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
@@ -387,8 +389,8 @@ export default function Career() {
               >
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    판매까지의 전 마케팅을 총괄하였습니다.<br />
-                    브랜딩과 세일즈 관점으로 모델을 제안하고, 팬덤 타깃 상품을 기획하여 완판하였습니다.
+                    협업 캠페인 관련 마케팅을 총괄하였습니다.<br />
+                    모델 및 기획 상품을 제안하여 무신사 랭킹 1위를 달성하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -486,8 +488,8 @@ export default function Career() {
               >
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    판매까지의 전 마케팅을 총괄하였습니다.<br />
-                    셀럽의 특성(세계관)을 적용할 수 있는 컨셉을 제안하였습니다.
+                    협업 캠페인 관련 마케팅을 총괄하였습니다.<br />
+                    셀럽의 특성(세계관)을 반영한 컨셉을 제안하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -572,8 +574,8 @@ export default function Career() {
               >
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
-                    시즌 발매 및 이슈 홍보를 위한 인플루언서 시딩, 협찬을 진행하였습니다.<br />
-                    2차 활용을 위한 캠페인 기획/진행, 제안을 통해 구매 전환이 발생하였습니다.
+                    인플루언서 리스트업, 시딩 및 협찬을 진행하였습니다.<br />
+                    다양한 채널에 2차 활용하여 높은 전환이 발생하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -581,16 +583,16 @@ export default function Career() {
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
                         <li>톤앤매너를 고려한 인플루언서 리스트업</li>
                         <li>협찬, 시딩 커뮤니케이션</li>
-                        <li>이미지 2차 활용 및 추가 활용 제안 (광고 소재, 썸네일, 스냅 이미지 등)</li>
+                        <li>2차 활용 추가 제안 : 광고 소재, 썸네일, 스냅 위젯 등</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">주요 캠페인</p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div className="space-y-2">
-                          <p className="font-bold text-neutral-800 text-sm">엔시티 위시 (아이돌) 손민수 콘텐츠</p>
+                          <p className="font-bold text-neutral-800 text-sm">팬 인플루언서 시딩 (손민수 콘텐츠)</p>
                           <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
-                            <li>셀럽 착용 이슈를 활용한 2차 바이럴</li>
+                            <li>셀럽 착용과 연계한 2차 바이럴</li>
                             <li>유명 팬 크리에이터 리스트업</li>
                             <li>제품 제공 및 콘텐츠 발행</li>
                           </ul>
@@ -622,10 +624,10 @@ export default function Career() {
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <p className="font-bold text-neutral-800 text-sm">인플루언서 착용 이미지 썸네일 제안</p>
+                          <p className="font-bold text-neutral-800 text-sm">썸네일 교체 제안</p>
                           <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-1">
-                            <li>무신사 스토어 내 정량적 수치 부진 (클릭율, 좋아요, 판매 등)</li>
-                            <li>일반인 착용 이미지에 대한 선호 트렌드 반영</li>
+                            <li>무신사 내 제품 클릭율 부진</li>
+                            <li>스타일링 이미지에 대한 선호 트렌드 반영</li>
                           </ul>
                         </div>
                       </div>
@@ -633,9 +635,9 @@ export default function Career() {
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                        <li>손민수 콘텐츠 3건 발행 : <span className="font-bold text-neutral-900">조회수 33만, 공유수 2천7백, 구매전환수 약 80건</span> 발생 (1개월 기준)</li>
-                        <li>썸네일 교체 이후 클릭율 최대 <span className="font-bold text-neutral-900">50%</span> 증가</li>
-                        <li>무신사 브랜드 스냅 활성화 (좋아요 평균 50개, 랭킹 1위 다수 기록)</li>
+                        <li>팬 인플루언서 시딩 : 콘텐츠 3건 <span className="font-bold text-neutral-900">조회수 33만 / 구매전환수 약 80건</span> 발생 (1개월)</li>
+                        <li>무신사 제품 클릭율 최대 <span className="font-bold text-neutral-900">50%</span> 증가</li>
+                        <li>무신사 브랜드 스냅 활성화 (좋아요 증가, 랭킹 1위 다수 기록)</li>
                       </ul>
                     </div>
                   </div>
@@ -660,7 +662,7 @@ export default function Career() {
 
         <div className="flex flex-col">
           <AccordionItem
-            title="NAVER POST : BRAVO LIFE"
+            title="네이버 포스트 : 뷰라보라이프"
             isOpen={!!openItems['naver']}
             onClick={() => toggleItem('naver')}
           >
@@ -715,7 +717,7 @@ export default function Career() {
           </AccordionItem>
 
           <AccordionItem
-            title="YOUTUBE : RTV"
+            title="유튜브 : 리뷰맛집 RTV"
             isOpen={!!openItems['youtube']}
             onClick={() => toggleItem('youtube')}
           >
@@ -779,7 +781,7 @@ export default function Career() {
           </AccordionItem>
 
           <AccordionItem
-            title="GS RETAIL DALISALDA"
+            title="GS리테일 달리살다"
             isOpen={!!openItems['gs']}
             onClick={() => toggleItem('gs')}
           >
@@ -819,62 +821,6 @@ export default function Career() {
                     </a>
                     <a 
                       href="https://www.instagram.com/p/CPhaLOqhCer/?img_index=4" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
-                    >
-                      콘텐츠 3 <ExternalLink className="ml-2 w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AccordionItem>
-
-          <AccordionItem
-            title="SNS CHANNEL (BLOG / INSTAGRAM)"
-            isOpen={!!openItems['sns_round']}
-            onClick={() => toggleItem('sns_round')}
-          >
-            <div className="space-y-6">
-              <div className="flex flex-col space-y-6">
-                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
-                  <p className="font-bold text-lg mb-4">진행업무</p>
-                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
-                    <li>채널 오픈, 기본 톤 앤 매너 작업</li>
-                    <li>콘텐츠 기획 및 에디팅 (월 20건 내외)</li>
-                    <li>게재보고/월간보고서 작성</li>
-                    <li>광고주 커뮤니케이션</li>
-                    <li>팔로우 이벤트 진행</li>
-                  </ul>
-                </div>
-                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
-                  <p className="font-bold text-lg mb-4">결과</p>
-                  <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
-                    <li>네이버블로그 일 평균 조회수 300회 달성</li>
-                    <li>네이버블로그 이웃 400명 달성</li>
-                    <li>인스타그램 팔로워 500명 달성</li>
-                    <li>페이스북 팔로워 800명 달성</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-3">
-                    <a 
-                      href="https://blog.naver.com/dongpyunbubu1/222180449541" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
-                    >
-                      콘텐츠 1 <ExternalLink className="ml-2 w-3 h-3" />
-                    </a>
-                    <a 
-                      href="https://blog.naver.com/dongpyunbubu1/222187835894" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
-                    >
-                      콘텐츠 2 <ExternalLink className="ml-2 w-3 h-3" />
-                    </a>
-                    <a 
-                      href="https://blog.naver.com/dongpyunbubu1/222215134263" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"

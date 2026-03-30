@@ -1,7 +1,34 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Instagram, Youtube, ExternalLink } from 'lucide-react';
+import { Instagram, Youtube, ExternalLink, X } from 'lucide-react';
+
+const bravoLifeContents = [
+  {
+    id: 1,
+    title: "콘텐츠 1",
+    cover: "https://i.imgur.com/t44KiDM.jpeg",
+    images: [
+      "https://i.imgur.com/t44KiDM.jpeg",
+      "https://i.imgur.com/sZRlLx1.jpeg",
+      "https://i.imgur.com/cvjycPV.jpeg",
+      "https://i.imgur.com/7g7A39e.jpeg",
+      "https://i.imgur.com/iWLZLry.jpeg"
+    ]
+  },
+  {
+    id: 2,
+    title: "콘텐츠 2",
+    cover: "https://i.imgur.com/hzZVEtZ.jpeg",
+    images: [
+      "https://i.imgur.com/hzZVEtZ.jpeg",
+      "https://i.imgur.com/3cRgSHr.jpeg",
+      "https://i.imgur.com/vwLPRVa.jpeg",
+      "https://i.imgur.com/LWgTOJw.jpeg",
+      "https://i.imgur.com/6n9JkeA.jpeg"
+    ]
+  }
+];
 
 const roasData = [
   { date: "2024.05", roas: 422 },
@@ -58,6 +85,7 @@ function AccordionItem({ title, children, isOpen, onClick }: AccordionItemProps)
 
 export default function Career() {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
+  const [selectedGallery, setSelectedGallery] = useState<typeof bravoLifeContents[0] | null>(null);
 
   const toggleItem = (id: string) => {
     setOpenItems(prev => ({
@@ -76,7 +104,7 @@ export default function Career() {
       <header className="bg-black text-white pt-24 md:pt-32 pb-12 md:pb-24 px-8 md:px-24 mb-12 md:mb-24">
         <div className="max-w-7xl mx-auto">
           <h1 className="serif text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">CAREER</h1>
-          <p className="text-neutral-400 text-lg">Experience & Professional Journey</p>
+          <p className="text-neutral-400 text-lg">What I Execute</p>
         </div>
       </header>
 
@@ -88,7 +116,7 @@ export default function Career() {
             <h2 className="text-2xl md:text-4xl font-bold mb-2">알엠티씨 로맨틱크라운 마케팅</h2>
             <p className="text-base md:text-lg text-neutral-600">패션 브랜드 IMC 마케팅 단독 운영</p>
           </div>
-          <p className="serif text-xl font-medium text-neutral-600 mt-4 md:mt-0">2022.03 - 2025.11</p>
+          <p className="text-sm md:text-base font-medium text-neutral-600 mt-4 md:mt-0">2022.03 - 2025.11</p>
         </div>
 
         <div className="space-y-16">
@@ -139,6 +167,23 @@ export default function Career() {
                             />
                           </div>
                         ))}
+                      </div>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">내부 브랜드 촬영 지원</p>
+                      <ul className="list-disc list-inside text-sm md:text-base text-neutral-600 space-y-2 mb-6">
+                        <li>
+                          내부 브랜드 <a href="https://www.instagram.com/niier_nor_official/" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline font-bold">niiernor</a>의 SNS 콘텐츠 촬영
+                        </li>
+                        <li>브랜딩을 고려한 러프한 이미지, 백스테이지 컷</li>
+                      </ul>
+                      <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
+                        <img 
+                          src="https://i.imgur.com/ZSYMulu.png" 
+                          alt="Internal Brand Shooting Support" 
+                          className="w-full h-auto block"
+                          referrerPolicy="no-referrer"
+                        />
                       </div>
                     </div>
                   </div>
@@ -221,7 +266,7 @@ export default function Career() {
                 <div className="space-y-6">
                   <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
                     프로모션에 상응하는 메타 광고 프로세스를 최적화 하였습니다.<br />
-                    데이터 분석과 테스트를 거쳐 최종 ROAS 800%대를 유지 하였습니다.
+                    데이터 분석과 테스트를 거쳐 최종 <span className="font-bold text-neutral-900">ROAS 800%대</span>를 유지 하였습니다.
                   </p>
                   <div className="flex flex-col space-y-6">
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
@@ -236,8 +281,8 @@ export default function Career() {
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
-                        <li>월 평균 ROAS 800%대 유지</li>
-                        <li>월 최고 ROAS 1,123% 달성 (2024년 겨울 무진장)</li>
+                        <li>월 평균 <span className="font-bold text-neutral-900">ROAS 800%대</span> 유지</li>
+                        <li>월 최고 <span className="font-bold text-neutral-900">ROAS 1,123%</span> 달성 (2024년 겨울 무진장)</li>
                         <li>무신사 협력광고 우수 브랜드 선정</li>
                       </ul>
                       
@@ -309,9 +354,9 @@ export default function Career() {
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
-                        <li>메시지 평균 CTR 8% 상승</li>
+                        <li>메시지 <span className="font-bold text-neutral-900">평균 CTR 8%</span> 상승</li>
                         <li>메시지 할인율별 소재 구성 매뉴얼화</li>
-                        <li>쿠폰 클릭율 및 발급율 7-10% 상승</li>
+                        <li>쿠폰 클릭율 및 발급율 <span className="font-bold text-neutral-900">7-10%</span> 상승</li>
                       </ul>
                       <div className="mt-8 border border-neutral-100 overflow-hidden bg-neutral-50 shadow-sm">
                         <img 
@@ -587,8 +632,8 @@ export default function Career() {
                     <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
                       <p className="font-bold text-lg mb-4">결과</p>
                       <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
-                        <li>손민수 콘텐츠 3건 발행 : 조회수 33만, 공유수 2천7백, 구매전환수 약 80건 발생 (1개월 기준)</li>
-                        <li>썸네일 교체 이후 클릭율 최대 50% 증가</li>
+                        <li>손민수 콘텐츠 3건 발행 : <span className="font-bold text-neutral-900">조회수 33만, 공유수 2천7백, 구매전환수 약 80건</span> 발생 (1개월 기준)</li>
+                        <li>썸네일 교체 이후 클릭율 최대 <span className="font-bold text-neutral-900">50%</span> 증가</li>
                         <li>무신사 브랜드 스냅 활성화 (좋아요 평균 50개, 랭킹 1위 다수 기록)</li>
                       </ul>
                     </div>
@@ -607,7 +652,7 @@ export default function Career() {
             <h2 className="text-2xl md:text-4xl font-bold mb-2">라운드미디어 소셜콘텐츠팀</h2>
             <p className="text-base md:text-lg text-neutral-600">뷰티패션 매거진 에디터 / 광고주 채널 운영 기획</p>
           </div>
-          <p className="serif text-xl font-medium text-neutral-600 mt-4 md:mt-0">2020.01 - 2021.01</p>
+          <p className="text-sm md:text-base font-medium text-neutral-600 mt-4 md:mt-0">2020.01 - 2021.01</p>
         </div>
 
         <div className="flex flex-col">
@@ -636,6 +681,31 @@ export default function Career() {
                     <li>네이버 패션뷰티판 메인 노출 월 5-15회</li>
                     <li>목표 검색 키워드 네이버 상위 노출 90% 달성</li>
                   </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">콘텐츠 예시</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-2xl">
+                    {bravoLifeContents.map((content) => (
+                      <div 
+                        key={content.id} 
+                        className="group cursor-pointer relative"
+                        onClick={() => setSelectedGallery(content)}
+                      >
+                        <div className="aspect-[3/4] overflow-hidden bg-neutral-100 border border-neutral-200">
+                          <img 
+                            src={content.cover} 
+                            alt={content.title} 
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <div className="mt-3 flex items-center justify-between">
+                          <span className="text-sm font-bold text-neutral-900">{content.title}</span>
+                          <span className="text-[10px] text-neutral-400 uppercase tracking-widest font-bold">View</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -710,10 +780,51 @@ export default function Career() {
             isOpen={!!openItems['gs']}
             onClick={() => toggleItem('gs')}
           >
-            <div className="py-4">
-              <p className="text-base text-neutral-600 leading-relaxed max-w-4xl">
-                채널 오픈 제안 및 운영 관리. 브랜드 온드미디어 확장 및 콘텐츠 톤앤매너 확립을 통한 브랜드 인지도 제고.
-              </p>
+            <div className="space-y-6">
+              <div className="flex flex-col space-y-6">
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">진행 업무</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>채널 오픈 제안 (기본 톤앤매너 작업) 및 운영 관리</li>
+                    <li>콘텐츠 기획 및 에디팅</li>
+                    <li>게재보고/월간보고서 작성</li>
+                    <li>광고주 커뮤니케이션</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">결과</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                    <li>브랜드 온드미디어 확장</li>
+                    <li>콘텐츠 톤 앤 매너 확립</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-3">
+                    <a 
+                      href="https://www.instagram.com/p/CHPQB4mJr5o/?img_index=1" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 1 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/p/COHJN1Yp5F5/?img_index=4" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 2 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/p/CPhaLOqhCer/?img_index=4" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 3 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </AccordionItem>
 
@@ -722,15 +833,101 @@ export default function Career() {
             isOpen={!!openItems['sns_round']}
             onClick={() => toggleItem('sns_round')}
           >
-            <div className="py-4">
-              <ul className="text-base text-neutral-600 space-y-4">
-                <li>• 네이버블로그 일 평균 조회수 300회 달성</li>
-                <li>• 인스타그램/페이스북 채널 톤앤매너 구축 및 콘텐츠 배포</li>
-              </ul>
+            <div className="space-y-6">
+              <div className="flex flex-col space-y-6">
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">진행업무</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2">
+                    <li>채널 오픈, 기본 톤 앤 매너 작업</li>
+                    <li>콘텐츠 기획 및 에디팅 (월 20건 내외)</li>
+                    <li>게재보고/월간보고서 작성</li>
+                    <li>광고주 커뮤니케이션</li>
+                    <li>팔로우 이벤트 진행</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                  <p className="font-bold text-lg mb-4">결과</p>
+                  <ul className="list-disc list-inside text-base text-neutral-600 space-y-2 mb-8">
+                    <li>네이버블로그 일 평균 조회수 300회 달성</li>
+                    <li>네이버블로그 이웃 400명 달성</li>
+                    <li>인스타그램 팔로워 500명 달성</li>
+                    <li>페이스북 팔로워 800명 달성</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-3">
+                    <a 
+                      href="https://blog.naver.com/dongpyunbubu1/222180449541" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 1 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                    <a 
+                      href="https://blog.naver.com/dongpyunbubu1/222187835894" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 2 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                    <a 
+                      href="https://blog.naver.com/dongpyunbubu1/222215134263" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
+                    >
+                      콘텐츠 3 <ExternalLink className="ml-2 w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </AccordionItem>
         </div>
       </section>
+
+      {/* Gallery Modal */}
+      <AnimatePresence>
+        {selectedGallery && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-8 bg-black/80 backdrop-blur-md"
+            onClick={() => setSelectedGallery(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 40 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 40 }}
+              className="bg-white w-full max-w-6xl max-h-[90vh] rounded-[2.5rem] relative shadow-2xl flex flex-col overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedGallery(null)}
+                className="absolute top-6 right-6 md:top-10 md:right-10 p-3 hover:bg-neutral-100 rounded-full transition-colors z-50 bg-white/80 backdrop-blur-sm shadow-sm"
+              >
+                <X className="w-6 h-6 md:w-8 md:h-8 text-neutral-900" />
+              </button>
+              
+              <div className="overflow-y-auto p-8 md:p-20 no-scrollbar flex items-center min-h-[60vh]">
+                <div className="flex overflow-x-auto gap-6 pb-10 snap-x no-scrollbar -mx-4 px-4 w-full">
+                  {selectedGallery.images.map((img, idx) => (
+                    <div key={idx} className="flex-none w-[55%] md:w-[28%] aspect-[3/4] overflow-hidden snap-center bg-neutral-100 shadow-xl">
+                      <img 
+                        src={img} 
+                        alt={`${selectedGallery.title} - ${idx + 1}`} 
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   </motion.div>
 );

@@ -192,7 +192,7 @@ export default function Activities() {
                   ) : (
                     <div className="flex overflow-x-auto gap-6 pb-10 snap-x custom-scrollbar -mx-4 px-4">
                       {selectedProject.images.map((img, iIdx) => (
-                        <div key={iIdx} className="flex-none w-[65%] md:w-[50%] aspect-[4/3] overflow-hidden snap-center bg-neutral-100 shadow-md">
+                        <div key={iIdx} className="flex-none w-[50%] md:w-[40%] aspect-[4/3] overflow-hidden snap-center bg-neutral-100 shadow-md">
                           <img 
                             src={img} 
                             alt={`${selectedProject.displayTitle}-${iIdx}`} 

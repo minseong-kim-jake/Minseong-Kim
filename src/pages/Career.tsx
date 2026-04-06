@@ -181,7 +181,7 @@ export default function Career() {
                         <img 
                           src="https://i.imgur.com/ZSYMulu.png" 
                           alt="Internal Brand Shooting Support" 
-                          className="w-full h-auto block"
+                          className="w-3/4 h-auto block mx-auto"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -365,7 +365,7 @@ export default function Career() {
                         <img 
                           src="https://i.imgur.com/woUqtUA.png" 
                           alt="Kakao CRM Performance" 
-                          className="w-full h-auto block"
+                          className="w-3/4 h-auto block mx-auto"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -472,7 +472,7 @@ export default function Career() {
                         <img 
                           src="https://i.imgur.com/KAEJRoB.png" 
                           alt="ZB1 Collaboration" 
-                          className="w-full h-auto block"
+                          className="w-3/4 h-auto block mx-auto"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -558,7 +558,7 @@ export default function Career() {
                         <img 
                           src="https://i.imgur.com/CeuxQYN.png" 
                           alt="Woozi Collaboration" 
-                          className="w-full h-auto block"
+                          className="w-3/4 h-auto block mx-auto"
                           referrerPolicy="no-referrer"
                         />
                       </div>

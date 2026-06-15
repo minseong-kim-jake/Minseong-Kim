@@ -39,6 +39,15 @@ const roasData = [
   { date: "25.02", roas: 821 },
 ];
 
+const musinsaAdData = [
+  { date: "25.04", roas: 716 },
+  { date: "25.05", roas: 731 },
+  { date: "25.06", roas: 707 },
+  { date: "25.07", roas: 688 },
+  { date: "25.08", roas: 1696 },
+  { date: "25.09", roas: 1274 },
+];
+
 interface AccordionItemProps {
   title: string;
   children: React.ReactNode;
@@ -368,6 +377,82 @@ export default function Career() {
                           className="w-3/4 h-auto block mx-auto"
                           referrerPolicy="no-referrer"
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                title="MUSINSA AD"
+                isOpen={!!openItems['musinsa_ad']}
+                onClick={() => toggleItem('musinsa_ad')}
+              >
+                <div className="space-y-6">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-3xl">
+                    무신사 플랫폼 내 앱상품광고를 진행하였습니다.<br />
+                    데이터 분석과 테스트를 거쳐 평균 <span className="font-bold">ROAS 700% 이상</span>을 유지하였습니다.
+                  </p>
+                  <div className="flex flex-col space-y-6">
+                    <div className="bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+                      <p className="font-bold text-lg mb-4">진행업무</p>
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2">
+                        <li>상시 및 기획전 연계 광고 캠페인 운영</li>
+                        <li>제품 구성, CPC 및 예산 테스트를 통한 광고 세팅</li>
+                        <li>데이터 분석을 통한 NEXT STEP 도출</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-neutral-200 shadow-sm p-4 md:p-8">
+                      <p className="font-bold text-lg mb-4">결과</p>
+                      <ul className="list-custom text-sm md:text-base text-neutral-600 space-y-2 mb-8">
+                        <li>평균 <span className="font-bold text-neutral-900">ROAS 700%</span> 유지</li>
+                        <li>최고 <span className="font-bold text-neutral-900">ROAS 1,696%</span> 달성 (2025.08)</li>
+                      </ul>
+                      
+                      <div className="h-[300px] w-full mt-8 pb-12">
+                        <p className="text-sm font-bold text-neutral-500 mb-4 pl-3">ROAS (100%)</p>
+                        <ResponsiveContainer width="100%" height="100%">
+                          <LineChart data={musinsaAdData} margin={{ top: 5, right: 10, left: -10, bottom: 25 }}>
+                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+                            <XAxis 
+                              dataKey="date" 
+                              axisLine={false} 
+                              tickLine={false} 
+                              tick={{ fontSize: 12, fill: '#888' }} 
+                              dy={10}
+                              padding={{ left: 10, right: 10 }}
+                            />
+                            <YAxis 
+                              axisLine={false} 
+                              tickLine={false} 
+                              tick={{ fontSize: 12, fill: '#888' }}
+                              width={40}
+                              domain={[0, 2000]}
+                              ticks={[0, 500, 1000, 1500, 2000]}
+                              tickFormatter={(value) => `${value / 100}`}
+                            />
+                            <Tooltip 
+                              contentStyle={{ 
+                                borderRadius: '8px', 
+                                border: 'none', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                fontSize: '11px',
+                                padding: '8px 12px'
+                              }}
+                              itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
+                              formatter={(value: number) => [`${value}%`, 'ROAS']}
+                            />
+                            <Line 
+                              type="monotone" 
+                              dataKey="roas" 
+                              stroke="#000" 
+                              strokeWidth={3} 
+                              dot={{ r: 6, fill: '#000', strokeWidth: 2, stroke: '#fff' }} 
+                              activeDot={{ r: 8, fill: '#000', strokeWidth: 0 }}
+                              animationDuration={2000}
+                            />
+                          </LineChart>
+                        </ResponsiveContainer>
                       </div>
                     </div>
                   </div>

@@ -199,7 +199,7 @@ export default function Introduce() {
         <div>
           <h4 className="text-2xl font-bold mb-4 md:mb-8">MARKETING & DATA</h4>
           <div className="flex flex-wrap gap-2">
-            {["GA4", "Google Looker Studio", "Notion", "Slack"].map((skill) => (
+            {["GA4", "Google Data Studio", "Notion", "Slack"].map((skill) => (
               <span key={skill} className="px-2.5 py-1 border border-neutral-200 rounded-full text-[11px] font-medium text-neutral-600 hover:bg-black hover:text-white transition-colors duration-300 cursor-default">
                 {skill}
               </span>
